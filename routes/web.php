@@ -2,9 +2,14 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\Web\PageController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('web.home');
+Route::get('/about-us', [PageController::class, 'about'])->name('web.about');
+Route::get('/packages', [PageController::class, 'packages'])->name('web.packages');
+Route::get('/tour-&-reviews', [PageController::class, 'tour'])->name('web.tour');
+Route::get('/contact-us', [PageController::class, 'contact'])->name('web.contact');
 
 // Project routes
 Route::prefix('project')->name('projects.')->group(function () {

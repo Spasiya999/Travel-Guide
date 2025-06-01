@@ -87,7 +87,7 @@
 
     .airplane-icon {
         position: absolute;
-        top: -15%;
+        top: -10%;
         right: 22%;
     }
 
@@ -100,20 +100,28 @@
             height: 150px;
             margin-bottom: 15px;
         }
+
+        .airplane-icon {
+            position: absolute;
+            top: -15%;
+            right: 0%;
+        }
     }
 </style>
-<div class="main-container py-3">
+<div class="main-container py-5">
     <div class="container">
         <div class="row align-items-center">
             <!-- Left side - Images -->
             <div class="col-lg-5 col-md-6">
                 <div class="row">
-                    <div class="col-6 d-flex justify-content-between flex-column">
-                        <img src="{{ asset('frontend/img/about_us (3).png') }}" alt="Tropical Island Paradise" class="h-100 w-auto object-cover rounded-15 mb-3">
+                    <div class="col-md-6 col-12 d-flex justify-content-between flex-column mb-3">
+                        <img src="{{ asset('frontend/img/about_us (3).png') }}" alt="Tropical Island Paradise"
+                            class="h-100 w-auto object-cover rounded-15 mb-3">
                         <img src="{{ asset('frontend/img/about_us (1).png') }}" alt="Ancient Temple">
                     </div>
-                    <div class="col-6">
-                        <img src="{{ asset('frontend/img/about_us (2).png') }}" alt="Palm Trees Landscape">
+                    <div class="col-md-6 col-12">
+                        <img src="{{ asset('frontend/img/about_us (2).png') }}" alt="Palm Trees Landscape"
+                            class="w-100">
                     </div>
                 </div>
             </div>

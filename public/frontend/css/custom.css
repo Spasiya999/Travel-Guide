@@ -274,10 +274,325 @@ span {
     margin-top: 20px;
 }
 
+.rounded-lg-pill {
+    border-radius: 50px !important;
+}
+
+.testimonials-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #87ceeb 0%, #4a90e2 100%);
+    color: white;
+}
+
+.section-title {
+    font-size: 28px;
+    color: #ffd700;
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+
+.section-subtitle {
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 50px;
+    color: white;
+}
+
+.testimonials-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.main-layout {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.testimonial-main-image {
+    flex: 0 0 300px;
+    max-width: 300px;
+}
+
+.testimonial-main-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+.testimonials-carousel {
+    flex: 1;
+    min-width: 0;
+    position: relative;
+}
+
+.testimonial-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    margin: 0 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+    height: auto;
+    min-height: 280px;
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.testimonial-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.testimonial-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.testimonial-info h5 {
+    color: #333;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 5px 0;
+}
+
+.star-rating {
+    color: #ffc107;
+    font-size: 16px;
+    margin: 0;
+}
+
+.testimonial-text {
+    color: #666;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.travel-date {
+    color: #999;
+    font-size: 14px;
+    font-style: italic;
+    margin: 0;
+}
+
+/* Owl Carousel Custom Styles */
+.owl-carousel {
+    position: relative;
+}
+
+.owl-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.owl-nav button {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: #031427 !important;
+    border-radius: 50%;
+    border: none;
+    color: white !important;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    pointer-events: all;
+    box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
+    outline: none;
+}
+
+.owl-nav button:hover {
+    background: #3a7bc8 !important;
+    transform: scale(1.1);
+}
+
+.owl-nav button:focus {
+    outline: none;
+}
+
+.owl-prev {
+    left: -25px;
+}
+
+.owl-next {
+    right: -25px;
+}
+
+.owl-nav button span {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.owl-dots {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.owl-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3) !important;
+    margin: 0 5px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.owl-dot.active {
+    background: #ffd700 !important;
+    transform: scale(1.2);
+}
+
+.owl-dot:hover {
+    background: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    .testimonials-section {
+        padding: 60px 0;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    .section-title {
+        font-size: 24px;
+    }
+
+    .section-subtitle {
+        font-size: 32px;
+        margin-bottom: 30px;
+    }
+
+    .main-layout {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .testimonial-main-image {
+        flex: none;
+        max-width: 250px;
+        align-self: center;
+    }
+
+    .testimonials-carousel {
+        width: 100%;
+    }
+
+    .testimonial-card {
+        margin: 0 10px;
+        padding: 25px;
+        min-height: 250px;
+    }
+
+    .testimonial-avatar {
+        width: 50px;
+        height: 50px;
+        margin-right: 12px;
+    }
+
+    .testimonial-info h5 {
+        font-size: 16px;
+    }
+
+    .testimonial-text {
+        font-size: 14px;
+    }
+
+    .owl-nav button {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    .owl-prev {
+        left: -20px;
+    }
+
+    .owl-next {
+        right: -20px;
+    }
+
+    .owl-nav button span {
+        font-size: 18px;
+    }
+
+    .owl-dots {
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .testimonials-section {
+        padding: 40px 0;
+    }
+
+    .section-subtitle {
+        font-size: 28px;
+    }
+
+    .testimonial-card {
+        margin: 0 5px;
+        padding: 20px;
+    }
+
+    .owl-prev {
+        left: -15px;
+    }
+
+    .owl-next {
+        right: -15px;
+    }
+
+    .owl-nav button {
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
+    }
+
+    .owl-nav button span {
+        font-size: 16px;
+    }
+}
+
+/* Touch-friendly improvements */
+@media (hover: none) and (pointer: coarse) {
+    .testimonial-card:hover {
+        transform: none;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+}
+
 /* For mobile responsiveness */
 @media (max-width: 768px) {
     .hero-content h1 {
         font-size: 2.5rem;
+    }
+
+    .rounded-lg-pill {
+        border-radius: 30px !important;
     }
 
     .navbar-collapse {
