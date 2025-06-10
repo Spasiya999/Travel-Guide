@@ -8,6 +8,12 @@
 
     @include('admin.libraries.style')
 
+    <style>
+        .cke_notifications_area {
+            display: none !important;
+        }
+    </style>
+
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">

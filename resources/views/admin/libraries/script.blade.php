@@ -4,7 +4,7 @@
 <script src="{{ asset('plugins/jquery-ui/jquery-ui.min.js') }}"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
-  $.widget.bridge('uibutton', $.ui.button)
+    $.widget.bridge('uibutton', $.ui.button)
 </script>
 <!-- Bootstrap 4 -->
 <script src="{{ asset('admin-assets/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
@@ -21,7 +21,8 @@
 <script src="{{ asset('admin-assets/plugins/moment/moment.min.js') }}"></script>
 <script src="{{ asset('admin-assets/plugins/daterangepicker/daterangepicker.js') }}"></script>
 <!-- Tempusdominus Bootstrap 4 -->
-<script src="{{ asset('admin-assets/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js') }}"></script>
+<script src="{{ asset('admin-assets/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js') }}">
+</script>
 <!-- Summernote -->
 <script src="{{ asset('admin-assets/plugins/summernote/summernote-bs4.min.js') }}"></script>
 <!-- overlayScrollbars -->
@@ -32,3 +33,11 @@
 <script src="{{ asset('admin-assets/dist/js/demo.js') }}"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="{{ asset('admin-assets/dist/js/pages/dashboard.js') }}"></script>
+
+<script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
+<!-- ckeditor -->
+<script src="https://cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
+
+<script>
+    $('.ckeditor').ckeditor();
+</script>

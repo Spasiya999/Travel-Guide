@@ -3,7 +3,7 @@
     <a href="" class="brand-link">
         <img src="{{ asset('admin-assets/dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo"
             class="brand-image img-circle elevation-3" style="opacity: .8">
-        <span class="brand-text font-weight-light">eCom Store</span>
+        <span class="brand-text font-weight-light">{{ config('app.name') }}</span>
     </a>
 
     <!-- Sidebar -->
@@ -14,44 +14,108 @@
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                 data-accordion="false">
 
-                <li class="nav-item ">
-                    <a href="#" class="nav-link active">
-                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                <li class="nav-item">
+                    <a href="{{ route('home') }}" class="nav-link @if (Route::currentRouteName() == 'home') active @endif">
+                        <i class="nav-icon fas fa-th"></i>
                         <p>
                             Dashboard
+                        </p>
+                    </a>
+                </li>
+
+                <li class="nav-item ">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            Category
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="#" class="nav-link ">
+                            <a href="{{ route('admin.categories') }}"
+                                class="nav-link @if (Route::currentRouteName() == 'admin.categories') active @endif">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Sub Menu 01</p>
+                                <p>All Category</p>
                             </a>
                         </li>
                     </ul>
                 </li>
 
-                <li class="nav-item">
+                <li class="nav-item ">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon fas fa-th"></i>
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
-                            Manu 02
-                            <span class="right badge badge-danger">New</span>
+                            Services
+                            <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('admin.services') }}"
+                                class="nav-link @if (Route::currentRouteName() == 'admin.services') active @endif">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>All Services</p>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
 
-
-                <li class="nav-header">EXAMPLES</li>
-                <li class="nav-item">
+                <li class="nav-item ">
                     <a href="#" class="nav-link">
-                        <i class="nav-icon far fa-calendar-alt"></i>
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
-                            Calendar
-                            <span class="badge badge-info right">2</span>
+                            Testimonials
+                            <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('admin.testimonials') }}"
+                                class="nav-link @if (Route::currentRouteName() == 'admin.testimonials') active @endif">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>All Testimonials</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item ">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            Places
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('admin.places') }}"
+                                class="nav-link @if (Route::currentRouteName() == 'admin.places') active @endif">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>All Places</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item ">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            Inquiries
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('admin.inquiries') }}"
+                                class="nav-link @if (Route::currentRouteName() == 'admin.inquiries') active @endif">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>All Inquiries</p>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
 
             </ul>
