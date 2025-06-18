@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    @include('web.home.components.header')
+    @include('web.home.components.hero')
 
     @include('web.home.components.categories')
 

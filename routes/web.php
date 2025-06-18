@@ -11,6 +11,8 @@ Route::get('/packages', [PageController::class, 'packages'])->name('web.packages
 Route::get('/tour-&-reviews', [PageController::class, 'tour'])->name('web.tour');
 Route::get('/contact-us', [PageController::class, 'contact'])->name('web.contact');
 
+Route::post('/inquiry', [PageController::class, 'contactStore'])->name('web.contact.store');
+
 // Project routes
 Route::prefix('project')->name('projects.')->group(function () {
     // Main project routes

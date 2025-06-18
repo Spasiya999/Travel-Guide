@@ -1,4 +1,4 @@
-<section class="testimonials-section">
+{{-- <section class="testimonials-section">
     <div class="container">
         <div class="text-center mb-5">
             <h5 class="text-center text-white mb-0 carattere" style="font-size: 28px;">Our Testimonials</h5>
@@ -133,6 +133,67 @@
                             </p>
                             <p class="travel-date">Traveled September 2024</p>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> --}}
+
+<section class="testimonials-section">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h5 class="text-center text-white mb-0 carattere" style="font-size: 28px;">Our Testimonials</h5>
+            <h2 class="text-center fw-bold mb-4" style="font-size: 48px;">What they are talking about</h2>
+        </div>
+
+        <div class="testimonials-container">
+            <div class="main-layout">
+                <!-- Main Traveler Image -->
+                <div class="testimonial-main-image">
+                    <img src="{{ asset('frontend/img/testimonial.png') }}" class="w-100 rounded-4" alt="Main Traveler">
+                </div>
+
+                <div class="testimonials-carousel">
+                    <div class="owl-carousel owl-theme" id="testimonialsCarousel">
+                        @foreach ($testimonials as $testimonial)
+                            <div class="testimonial-card">
+                                <div class="testimonial-header">
+                                    {{-- Avatar SVG or use an image if available --}}
+                                    @if (!empty($testimonial->avatar))
+                                        <img src="{{ asset('storage/' . $testimonial->avatar) }}"
+                                            class="testimonial-avatar rounded-circle" width="60" height="60"
+                                            alt="{{ $testimonial->name }}">
+                                    @else
+                                        {{-- Default SVG avatar --}}
+                                        <svg class="testimonial-avatar" width="60" height="60"
+                                            viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <circle cx="30" cy="30" r="30" fill="#fbbf24" />
+                                            <circle cx="30" cy="22" r="12" fill="#8b4513" />
+                                            <path d="M15 50 Q30 40 45 50" fill="#8b4513" />
+                                            <circle cx="25" cy="20" r="2" fill="#000" />
+                                            <circle cx="35" cy="20" r="2" fill="#000" />
+                                            <path d="M25 25 Q30 28 35 25" stroke="#000" stroke-width="1"
+                                                fill="none" />
+                                        </svg>
+                                    @endif
+                                    <div class="testimonial-info">
+                                        <h5>{{ $testimonial->name }}</h5>
+                                        <div class="star-rating">
+                                            @for ($i = 0; $i < ($testimonial->rating ?? 5); $i++)
+                                                <i class="fas fa-star"></i>
+                                            @endfor
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="testimonial-text">
+                                    {{ $testimonial->message }}
+                                </p>
+                                <p class="travel-date">
+                                    {{ $testimonial->date ? 'Traveled ' . \Carbon\Carbon::parse($testimonial->date)->format('F Y') : '' }}
+                                </p>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>

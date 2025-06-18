@@ -13,4 +13,10 @@ class Config extends Model
         'value',
         'status'
     ];
+
+    public static function getValue($name, $default = null)
+    {
+        $config = self::where('name', $name)->where('status', 1)->first();
+        return $config ? $config->value : $default;
+    }
 }

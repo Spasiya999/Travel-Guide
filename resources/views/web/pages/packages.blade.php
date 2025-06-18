@@ -114,6 +114,10 @@
             border-radius: 10px;
             margin: 20px 0;
         }
+
+        .package-card {
+            min-height: 100px;
+        }
     </style>
 
 
@@ -146,236 +150,66 @@
                     <p class="text-muted mb-4 carattere font-28 mb-0">Filter packages by your interests</p>
                     <h2 class="fw-bold mb-4">Choose Your Adventure</h2>
                     <div class="filter-buttons">
-                        <button class="btn filter-btn active">All Packages</button>
-                        <button class="btn filter-btn">Cultural Heritage</button>
-                        <button class="btn filter-btn">Nature & Wildlife</button>
-                        <button class="btn filter-btn">Beach & Relaxation</button>
-                        <button class="btn filter-btn">Adventure</button>
-                        <button class="btn filter-btn">Photography</button>
+                        <a href="{{ route('web.packages') }}"
+                            class="btn filter-btn {{ !request('category') ? 'active' : '' }}">All Packages</a>
+                        @foreach ($categories as $category)
+                            <a href="{{ route('web.packages', ['category' => $category->id]) }}"
+                                class="btn filter-btn {{ request('category') == $category->id ? 'active' : '' }}">
+                                {{ $category->name }}
+                            </a>
+                        @endforeach
                     </div>
                 </div>
             </div>
 
             <!-- Featured Packages -->
             <div class="row">
-                <!-- Cultural Triangle Package -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card package-card">
-                        <div class="package-badge">Most Popular</div>
-                        <div class="duration-badge"><i class="fas fa-clock me-1"></i>7 Days</div>
-                        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                            class="package-img" alt="Cultural Triangle">
-                        <div class="card-body">
-                            <h5 class="card-title fw-bold">Cultural Triangle Explorer</h5>
-                            <p class="card-text text-muted">Journey through 2,500 years of Sri Lankan history. Visit ancient
-                                capitals of Anuradhapura, Polonnaruwa, and the magnificent Sigiriya Rock Fortress.</p>
-                            <div class="package-includes mb-3">
-                                <h6><i class="fas fa-check-circle text-success me-2"></i>Package Includes:</h6>
-                                <ul class="list-unstyled small">
-                                    <li><i class="fas fa-car me-2 text-primary"></i>Private air-conditioned vehicle</li>
-                                    <li><i class="fas fa-user-tie me-2 text-primary"></i>Personal guide (me!) throughout
-                                    </li>
-                                    <li><i class="fas fa-bed me-2 text-primary"></i>Comfortable accommodations</li>
-                                    <li><i class="fas fa-utensils me-2 text-primary"></i>Traditional Sri Lankan meals</li>
-                                    <li><i class="fas fa-ticket-alt me-2 text-primary"></i>All entrance fees included</li>
-                                </ul>
+                @forelse($packages as $package)
+                    <div class="col-lg-4 col-md-6 h-100">
+                        <div class="card package-card h-100">
+                            <div class="package-badge">
+                                {{ $package->category->name ?? 'Popular' }}
                             </div>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="rating">
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <small class="text-muted ms-1">(47 reviews)</small>
+                            <div class="duration-badge">
+                                <i class="fas fa-clock me-1"></i>{{ $package->duration }}
+                            </div>
+                            <img src="{{ $package->image ? asset($package->image) : asset('frontend/img/packges (1).png') }}"
+                                class="package-img" alt="{{ $package->name }}">
+                            <div class="card-body">
+                                <h5 class="card-title fw-bold">{{ $package->name }}</h5>
+                                <p class="card-text text-muted">{{ $package->short_description }}</p>
+                                <div class="package-includes mb-3">
+                                    {!! $package->description !!}
+                                    {{-- <h6><i class="fas fa-check-circle text-success me-2"></i>Package Includes:</h6>
+                                    <ul class="list-unstyled small">
+                                        <li><i class="fas fa-car me-2 text-primary"></i>Private air-conditioned vehicle</li>
+                                        <li><i class="fas fa-user-tie me-2 text-primary"></i>Personal guide</li>
+                                        <li><i class="fas fa-bed me-2 text-primary"></i>Comfortable accommodations</li>
+                                        <li><i class="fas fa-utensils me-2 text-primary"></i>Traditional meals</li>
+                                        <li><i class="fas fa-ticket-alt me-2 text-primary"></i>All entrance fees included
+                                        </li>
+                                    </ul> --}}
                                 </div>
-                                <a href="#" class="btn btn-primary">Book Now</a>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="rating">
+                                        @for ($i = 0; $i < 5; $i++)
+                                            <i class="fas fa-star text-warning"></i>
+                                        @endfor
+                                        <small class="text-muted ms-1">
+                                            ({{ $package->testimonials->where('status', 1)->where('is_approved', 1)->count() }}
+                                            reviews)
+                                        </small>
+                                    </div>
+                                    <a href="#" class="btn btn-primary">Book Now</a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <!-- Hill Country Package -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card package-card">
-                        <div class="package-badge">Scenic</div>
-                        <div class="duration-badge"><i class="fas fa-clock me-1"></i>5 Days</div>
-                        <img src="https://images.unsplash.com/photo-1596422846543-75c6fc197f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                            class="package-img" alt="Hill Country">
-                        <div class="card-body">
-                            <h5 class="card-title fw-bold">Misty Hill Country</h5>
-                            <p class="card-text text-muted">Experience the cool climate of Sri Lanka's hill country. Visit
-                                tea plantations, take scenic train rides, and enjoy breathtaking mountain views.</p>
-                            <div class="package-includes mb-3">
-                                <h6><i class="fas fa-check-circle text-success me-2"></i>Package Includes:</h6>
-                                <ul class="list-unstyled small">
-                                    <li><i class="fas fa-train me-2 text-primary"></i>Famous Kandy-Ella train ride</li>
-                                    <li><i class="fas fa-leaf me-2 text-primary"></i>Tea plantation visits & tastings</li>
-                                    <li><i class="fas fa-mountain me-2 text-primary"></i>Little Adam's Peak hiking</li>
-                                    <li><i class="fas fa-camera me-2 text-primary"></i>Nine Arch Bridge photography</li>
-                                    <li><i class="fas fa-home me-2 text-primary"></i>Local family homestay option</li>
-                                </ul>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="rating">
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <small class="text-muted ms-1">(32 reviews)</small>
-                                </div>
-                                <a href="#" class="btn btn-primary">Book Now</a>
-                            </div>
-                        </div>
+                @empty
+                    <div class="col-12">
+                        <p class="text-center">No packages found.</p>
                     </div>
-                </div>
-
-                <!-- Wildlife Safari Package -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card package-card">
-                        <div class="package-badge">Adventure</div>
-                        <div class="duration-badge"><i class="fas fa-clock me-1"></i>4 Days</div>
-                        <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                            class="package-img" alt="Wildlife Safari">
-                        <div class="card-body">
-                            <h5 class="card-title fw-bold">Wild Sri Lanka Safari</h5>
-                            <p class="card-text text-muted">Spot leopards, elephants, and exotic birds in their natural
-                                habitat. Experience the thrill of wildlife safaris in Yala and Udawalawe National Parks.</p>
-                            <div class="package-includes mb-3">
-                                <h6><i class="fas fa-check-circle text-success me-2"></i>Package Includes:</h6>
-                                <ul class="list-unstyled small">
-                                    <li><i class="fas fa-binoculars me-2 text-primary"></i>Multiple safari game drives</li>
-                                    <li><i class="fas fa-paw me-2 text-primary"></i>Best spots for leopard sightings</li>
-                                    <li><i class="fas fa-camera me-2 text-primary"></i>Photography guidance</li>
-                                    <li><i class="fas fa-tree me-2 text-primary"></i>Elephant orphanage visit</li>
-                                    <li><i class="fas fa-moon me-2 text-primary"></i>Night safari experience</li>
-                                </ul>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="rating">
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <small class="text-muted ms-1">(28 reviews)</small>
-                                </div>
-                                <a href="#" class="btn btn-primary">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- South Coast Beach Package -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card package-card">
-                        <div class="package-badge">Relaxation</div>
-                        <div class="duration-badge"><i class="fas fa-clock me-1"></i>6 Days</div>
-                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                            class="package-img" alt="South Coast">
-                        <div class="card-body">
-                            <h5 class="card-title fw-bold">South Coast Paradise</h5>
-                            <p class="card-text text-muted">Relax on pristine beaches, go whale watching, explore colonial
-                                Galle Fort, and experience the vibrant coastal culture of southern Sri Lanka.</p>
-                            <div class="package-includes mb-3">
-                                <h6><i class="fas fa-check-circle text-success me-2"></i>Package Includes:</h6>
-                                <ul class="list-unstyled small">
-                                    <li><i class="fas fa-whale me-2 text-primary"></i>Whale watching in Mirissa</li>
-                                    <li><i class="fas fa-fort-awesome me-2 text-primary"></i>Galle Fort guided tour</li>
-                                    <li><i class="fas fa-umbrella-beach me-2 text-primary"></i>Beach relaxation time</li>
-                                    <li><i class="fas fa-fish me-2 text-primary"></i>Fresh seafood experiences</li>
-                                    <li><i class="fas fa-water me-2 text-primary"></i>Water sports activities</li>
-                                </ul>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="rating">
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <small class="text-muted ms-1">(35 reviews)</small>
-                                </div>
-                                <a href="#" class="btn btn-primary">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Grand Tour Package -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card package-card">
-                        <div class="package-badge">Complete</div>
-                        <div class="duration-badge"><i class="fas fa-clock me-1"></i>14 Days</div>
-                        <img src="https://images.unsplash.com/photo-1571115764595-644a1f56a55c?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                            class="package-img" alt="Grand Tour">
-                        <div class="card-body">
-                            <h5 class="card-title fw-bold">Grand Sri Lanka Tour</h5>
-                            <p class="card-text text-muted">The ultimate Sri Lankan experience! Cover all highlights -
-                                ancient cities, hill country, wildlife parks, beaches, and cultural experiences in one
-                                comprehensive journey.</p>
-                            <div class="package-includes mb-3">
-                                <h6><i class="fas fa-check-circle text-success me-2"></i>Package Includes:</h6>
-                                <ul class="list-unstyled small">
-                                    <li><i class="fas fa-map-marked-alt me-2 text-primary"></i>All major destinations
-                                        covered</li>
-                                    <li><i class="fas fa-crown me-2 text-primary"></i>VIP treatment throughout</li>
-                                    <li><i class="fas fa-utensils me-2 text-primary"></i>Culinary experiences</li>
-                                    <li><i class="fas fa-spa me-2 text-primary"></i>Ayurvedic spa sessions</li>
-                                    <li><i class="fas fa-gift me-2 text-primary"></i>Special cultural performances</li>
-                                </ul>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="rating">
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <small class="text-muted ms-1">(19 reviews)</small>
-                                </div>
-                                <a href="#" class="btn btn-primary">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Photography Tour Package -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="card package-card">
-                        <div class="package-badge">Photography</div>
-                        <div class="duration-badge"><i class="fas fa-clock me-1"></i>8 Days</div>
-                        <img src="https://images.unsplash.com/photo-1605538883669-825200433431?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80"
-                            class="package-img" alt="Photography Tour">
-                        <div class="card-body">
-                            <h5 class="card-title fw-bold">Photographer's Paradise</h5>
-                            <p class="card-text text-muted">Capture Sri Lanka's most photogenic moments. From sunrise at
-                                Sigiriya to golden hour at tea plantations - perfect for photography enthusiasts.</p>
-                            <div class="package-includes mb-3">
-                                <h6><i class="fas fa-check-circle text-success me-2"></i>Package Includes:</h6>
-                                <ul class="list-unstyled small">
-                                    <li><i class="fas fa-camera me-2 text-primary"></i>Best photography locations</li>
-                                    <li><i class="fas fa-sun me-2 text-primary"></i>Golden hour timing guidance</li>
-                                    <li><i class="fas fa-users me-2 text-primary"></i>Local people photography</li>
-                                    <li><i class="fas fa-mountain me-2 text-primary"></i>Landscape photography spots</li>
-                                    <li><i class="fas fa-edit me-2 text-primary"></i>Basic editing tips</li>
-                                </ul>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="rating">
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <i class="fas fa-star text-warning"></i>
-                                    <small class="text-muted ms-1">(24 reviews)</small>
-                                </div>
-                                <a href="#" class="btn btn-primary">Book Now</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforelse
             </div>
         </div>
     </section>
@@ -458,7 +292,8 @@
                             <p class="small">Transparent, honest pricing with no hidden costs</p>
                         </div>
                     </div>
-                    <a href="#" class="btn btn-light btn-lg me-lg-3 mb-3 mb-lg-0">Plan My Custom Tour</a>
+                    <a href="{{ route('web.contact') }}" class="btn btn-light btn-lg me-lg-3 mb-3 mb-lg-0">Plan My Custom
+                        Tour</a>
                     <a href="#" class="btn btn-outline-light btn-lg">WhatsApp Me</a>
                 </div>
             </div>
@@ -522,4 +357,26 @@
             </div>
         </div>
     </section>
+@endsection
+
+@section('scripts')
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const includesDivs = document.querySelectorAll('.package-includes');
+            let maxHeight = 0;
+
+            // Find the maximum height
+            includesDivs.forEach(function(div) {
+                div.style.height = 'auto'; // Reset height to get natural height
+                if (div.offsetHeight > maxHeight) {
+                    maxHeight = div.offsetHeight;
+                }
+            });
+
+            // Apply the maximum height to all
+            includesDivs.forEach(function(div) {
+                div.style.height = maxHeight + 'px';
+            });
+        });
+    </script>
 @endsection

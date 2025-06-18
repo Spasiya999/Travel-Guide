@@ -1,0 +1,148 @@
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+
+class TestimonialSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
+    {
+        DB::table('testimonials')->insert([
+            [
+                'name' => 'Sarah Thompson',
+                'message' => 'Amazing experience! The team went above and beyond to make our trip unforgettable.',
+                'country' => 'USA',
+                'date' => '2024-12-01',
+                'rating' => 5,
+                'image' => null,
+                'user_image' => null,
+                'is_approved' => 1,
+                'service_id' => 1,
+                'category_id' => 1,
+                'status' => 1,
+            ],
+            [
+                'name' => 'Tom Hardy',
+                'message' => 'Professional service from start to finish. The attention to detail was exceptional.',
+                'country' => 'UK',
+                'date' => '2024-11-15',
+                'rating' => 5,
+                'image' => null,
+                'user_image' => null,
+                'is_approved' => 1,
+                'service_id' => 2,
+                'category_id' => 2,
+                'status' => 1,
+            ],
+            [
+                'name' => 'Emily Johnson',
+                'message' => 'Absolutely wonderful experience! The destinations were breathtaking.',
+                'country' => 'Canada',
+                'date' => '2024-10-10',
+                'rating' => 4,
+                'image' => null,
+                'user_image' => null,
+                'is_approved' => 1,
+                'service_id' => 3,
+                'category_id' => 3,
+                'status' => 1,
+            ],
+            [
+                'name' => 'Michael Brown',
+                'message' => 'Outstanding service and incredible value for money. Highly recommended.',
+                'country' => 'Australia',
+                'date' => '2024-09-20',
+                'rating' => 5,
+                'image' => null,
+                'user_image' => null,
+                'is_approved' => 1,
+                'service_id' => 4,
+                'category_id' => 4,
+                'status' => 1,
+            ],
+            [
+                'name' => 'Linda Williams',
+                'message' => 'The best travel experience I have ever had. Everything was perfect!',
+                'country' => 'New Zealand',
+                'date' => '2024-08-05',
+                'rating' => 5,
+                'image' => null,
+                'user_image' => null,
+                'is_approved' => 1,
+                'service_id' => 5,
+                'category_id' => 5,
+                'status' => 1,
+            ],
+            [
+                'name' => 'David Lee',
+                'message' => 'Great guides and wonderful locations. Will book again!',
+                'country' => 'Singapore',
+                'date' => '2024-07-18',
+                'rating' => 4,
+                'image' => null,
+                'user_image' => null,
+                'is_approved' => 1,
+                'service_id' => 6,
+                'category_id' => 6,
+                'status' => 1,
+            ],
+            [
+                'name' => 'Maria Garcia',
+                'message' => 'Our family had a fantastic time. Highly organized and friendly staff.',
+                'country' => 'Spain',
+                'date' => '2024-06-22',
+                'rating' => 5,
+                'image' => null,
+                'user_image' => null,
+                'is_approved' => 1,
+                'service_id' => 7,
+                'category_id' => 7,
+                'status' => 1,
+            ],
+            [
+                'name' => 'James Smith',
+                'message' => 'A memorable adventure. Everything was well planned.',
+                'country' => 'USA',
+                'date' => '2024-05-30',
+                'rating' => 4,
+                'image' => null,
+                'user_image' => null,
+                'is_approved' => 1,
+                'service_id' => 8,
+                'category_id' => 8,
+                'status' => 1,
+            ],
+            [
+                'name' => 'Anna Müller',
+                'message' => 'Loved every moment of our trip. Will recommend to friends.',
+                'country' => 'Germany',
+                'date' => '2024-04-12',
+                'rating' => 5,
+                'image' => null,
+                'user_image' => null,
+                'is_approved' => 1,
+                'service_id' => 9,
+                'category_id' => 9,
+                'status' => 1,
+            ],
+            [
+                'name' => 'Yuki Tanaka',
+                'message' => 'Excellent service and beautiful destinations.',
+                'country' => 'Japan',
+                'date' => '2024-03-08',
+                'rating' => 5,
+                'image' => null,
+                'user_image' => null,
+                'is_approved' => 1,
+                'service_id' => 10,
+                'category_id' => 10,
+                'status' => 1,
+            ],
+        ]);
+    }
+}

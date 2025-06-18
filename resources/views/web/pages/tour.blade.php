@@ -138,14 +138,15 @@
     </style>
 
 
-        <!-- Hero Section -->
+    <!-- Hero Section -->
     <section class="hero-section">
         <div class="container">
             <div class="row">
                 <div class="col-lg-7">
                     <h1 class="display-4 fw-bold mb-4">Discover Sri Lanka's Hidden Gems</h1>
-                    <p class="lead mb-4">Experience authentic Sri Lanka through my personalized tours and see what travelers are
-                saying about their adventures</p>
+                    <p class="lead mb-4">Experience authentic Sri Lanka through my personalized tours and see what travelers
+                        are
+                        saying about their adventures</p>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="{{ route('web.home') }}" class="text-white">Home</a></li>
@@ -202,82 +203,41 @@
                     <h2 class="fw-bold">What Travelers Are Saying</h2>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="testimonial-card">
-                        <div class="review-stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p class="mb-4">"Kasun made our Sri Lanka trip absolutely magical! His knowledge of local culture
-                            and hidden gems was incredible. We visited places no other tourists knew about. The tea
-                            plantation visit was a highlight - he arranged for us to stay with a local family!"</p>
-                        <div class="d-flex align-items-center">
-                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b17c?ixlib=rb-4.0.3&auto=format&fit=crop&w=60&q=80"
-                                alt="Emma Johnson" class="customer-img me-3">
-                            <div>
-                                <h6 class="mb-0">Emma Johnson</h6>
-                                <small class="opacity-75">
-                                    <img src="https://flagcdn.com/w20/au.png" class="me-1" width="20">
-                                    Australia • March 2024
-                                </small>
+            <div class="row" id="testimonial-list">
+                @foreach ($testimonials as $index => $testimonial)
+                    <div class="col-lg-4 testimonial-item" style="{{ $index >= 9 ? 'display:none;' : '' }}">
+                        <div class="testimonial-card">
+                            <div class="review-stars">
+                                @for ($i = 0; $i < ($testimonial->rating ?? 5); $i++)
+                                    <i class="fas fa-star"></i>
+                                @endfor
+                            </div>
+                            <p class="mb-4">"{{ $testimonial->message }}"</p>
+                            <div class="d-flex align-items-center">
+                                <img src="{{ $testimonial->user_image ? asset($testimonial->user_image) : 'https://ui-avatars.com/api/?name=' . urlencode($testimonial->name) . '&background=667eea&color=fff&size=60' }}"
+                                    alt="{{ $testimonial->name }}" class="customer-img me-3">
+                                <div>
+                                    <h6 class="mb-0">{{ $testimonial->name }}</h6>
+                                    <small class="opacity-75">
+                                        @if ($testimonial->country)
+                                            <img src="https://flagcdn.com/w20/{{ strtolower(substr($testimonial->country, 0, 2)) }}.png"
+                                                class="me-1" width="20">
+                                            {{ $testimonial->country }}
+                                        @endif
+                                        @if ($testimonial->date)
+                                            • {{ \Carbon\Carbon::parse($testimonial->date)->format('F Y') }}
+                                        @endif
+                                    </small>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="testimonial-card">
-                        <div class="review-stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p class="mb-4">"Kasun is not just a guide, he's a friend! He took us to his family home for
-                            authentic Sri Lankan dinner. His knowledge of wildlife was amazing - we saw leopards in Yala
-                            thanks to his connections with local trackers. Unforgettable experience!"</p>
-                        <div class="d-flex align-items-center">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=60&q=80"
-                                alt="Hans Mueller" class="customer-img me-3">
-                            <div>
-                                <h6 class="mb-0">Hans Mueller</h6>
-                                <small class="opacity-75">
-                                    <img src="https://flagcdn.com/w20/de.png" class="me-1" width="20">
-                                    Germany • February 2024
-                                </small>
-                            </div>
-                        </div>
+                @endforeach
+                @if (count($testimonials) > 6)
+                    <div class="col-12 text-center mt-4">
+                        <button id="showMoreBtn" class="btn btn-light">Show More</button>
                     </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="testimonial-card">
-                        <div class="review-stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p class="mb-4">"Best guide in Sri Lanka! Kasun's passion for his country is contagious. He made
-                            us feel like VIPs everywhere we went. The Sigiriya sunrise climb was breathtaking, and his
-                            photography tips helped us capture perfect shots!"</p>
-                        <div class="d-flex align-items-center">
-                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=60&q=80"
-                                alt="Yuki Tanaka" class="customer-img me-3">
-                            <div>
-                                <h6 class="mb-0">Yuki Tanaka</h6>
-                                <small class="opacity-75">
-                                    <img src="https://flagcdn.com/w20/jp.png" class="me-1" width="20">
-                                    Japan • January 2024
-                                </small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endif
             </div>
         </div>
     </section>
@@ -355,4 +315,20 @@
             </div>
         </div>
     </section>
+@endsection
+
+@section('scripts')
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const showMoreBtn = document.getElementById('showMoreBtn');
+            if (showMoreBtn) {
+                showMoreBtn.addEventListener('click', function() {
+                    document.querySelectorAll('.testimonial-item').forEach(function(el) {
+                        el.style.display = '';
+                    });
+                    showMoreBtn.style.display = 'none';
+                });
+            }
+        });
+    </script>
 @endsection

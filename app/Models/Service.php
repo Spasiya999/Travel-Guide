@@ -22,4 +22,9 @@ class Service extends Model
     {
         return $this->belongsTo(Category::class);
     }
+
+    public function testimonials()
+    {
+        return $this->hasMany(Testimonial::class);
+    }
 }
