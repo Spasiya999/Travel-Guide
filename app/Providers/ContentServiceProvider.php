@@ -24,7 +24,9 @@ class ContentServiceProvider extends ServiceProvider
 
         $places = Place::where('status', 1)->get();
 
-        $this->commonContent = $places;
+        $this->commonContent = [
+            'places' => $places,
+        ];
 
         // Share with all views
         View::share('commonContent', $this->commonContent);

@@ -103,71 +103,18 @@
 
     <div class="row justify-content-center g-4">
 
-        <div class="col-lg-4 col-md-6">
-            <div class="destination-card nine-arch" onclick="showDestination('Nine Arch Bridge')">
-                <div class="destination-overlay">
-                    <h3 class="destination-name">
-                        <i class="fas fa-map-marker-alt location-icon"></i>
-                        Nine Arch Bridge
-                    </h3>
+        @foreach ($places as $place)
+            <div class="col-lg-4 col-md-6">
+                <div class="destination-card nine-arch" onclick="showDestination({{ $place->id }})">
+                    <div class="destination-overlay">
+                        <h3 class="destination-name">
+                            <i class="fas fa-map-marker-alt location-icon"></i>
+                            Nine Arch Bridge
+                        </h3>
+                    </div>
                 </div>
             </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6">
-            <div class="destination-card sigiriya" onclick="showDestination('Sigiriya')">
-                <div class="destination-overlay">
-                    <h3 class="destination-name">
-                        <i class="fas fa-map-marker-alt location-icon"></i>
-                        Sigiriya
-                    </h3>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6">
-            <div class="destination-card kandy" onclick="showDestination('Kandy')">
-                <div class="destination-overlay">
-                    <h3 class="destination-name">
-                        <i class="fas fa-map-marker-alt location-icon"></i>
-                        Kandy
-                    </h3>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6">
-            <div class="destination-card galle" onclick="showDestination('Galle')">
-                <div class="destination-overlay">
-                    <h3 class="destination-name">
-                        <i class="fas fa-map-marker-alt location-icon"></i>
-                        Galle
-                    </h3>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6">
-            <div class="destination-card yala" onclick="showDestination('Yala')">
-                <div class="destination-overlay">
-                    <h3 class="destination-name">
-                        <i class="fas fa-map-marker-alt location-icon"></i>
-                        Yala
-                    </h3>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-lg-4 col-md-6">
-            <div class="destination-card nuwara-eliya" onclick="showDestination('Nuwara Eliya')">
-                <div class="destination-overlay">
-                    <h3 class="destination-name">
-                        <i class="fas fa-map-marker-alt location-icon"></i>
-                        Nuwara Eliya
-                    </h3>
-                </div>
-            </div>
-        </div>
+        @endforeach
     </div>
 </div>
 
@@ -187,79 +134,3 @@
     </div>
 </div>
 
-<script>
-    const destinationInfo = {
-        'Nine Arch Bridge': {
-            description: 'A stunning railway bridge in Ella, famous for its nine stone arches surrounded by lush greenery and tea plantations.',
-            highlights: ['Historic railway bridge', 'Scenic train rides', 'Tea plantation views',
-                'Photography hotspot'
-            ]
-        },
-        'Sigiriya': {
-            description: 'An ancient rock fortress and archaeological site, known as the "Lion Rock" - a UNESCO World Heritage Site.',
-            highlights: ['Ancient palace ruins', 'Climbing experience', 'Historical significance',
-                'Panoramic views'
-            ]
-        },
-        'Kandy': {
-            description: 'The cultural capital of Sri Lanka, home to the Temple of the Sacred Tooth Relic and beautiful lake views.',
-            highlights: ['Sacred temples', 'Cultural shows', 'Lake walks', 'Traditional crafts']
-        },
-        'Galle': {
-            description: 'A historic coastal city featuring Dutch colonial architecture and a well-preserved fort by the ocean.',
-            highlights: ['Colonial architecture', 'Fort walls', 'Beach views', 'Art galleries']
-        },
-        'Yala': {
-            description: 'Sri Lanka\'s most famous national park, renowned for its high density of leopards and diverse wildlife.',
-            highlights: ['Wildlife safari', 'Leopard spotting', 'Bird watching', 'Natural landscapes']
-        },
-        'Nuwara Eliya': {
-            description: 'Known as "Little England," this hill station offers cool climate, tea estates, and colonial charm.',
-            highlights: ['Tea plantations', 'Cool climate', 'Colonial architecture', 'Strawberry farms']
-        }
-    };
-
-    function showDestination(name) {
-        const info = destinationInfo[name];
-        const modalBody = document.getElementById('modalBody');
-        const modalTitle = document.getElementById('destinationModalLabel');
-
-        modalTitle.textContent = name;
-        modalBody.innerHTML = `
-                <div class="row">
-                    <div class="col-12">
-                        <h6 class="text-primary mb-3">About ${name}</h6>
-                        <p class="mb-4">${info.description}</p>
-
-                        <h6 class="text-primary mb-3">Highlights</h6>
-                        <ul class="list-unstyled">
-                            ${info.highlights.map(highlight => `
-                                    <li class="mb-2">
-                                        <i class="fas fa-check-circle text-success me-2"></i>
-                                        ${highlight}
-                                    </li>
-                                `).join('')}
-                        </ul>
-                    </div>
-                </div>
-            `;
-
-        const modal = new bootstrap.Modal(document.getElementById('destinationModal'));
-        modal.show();
-    }
-
-    document.addEventListener('DOMContentLoaded', function() {
-        const cards = document.querySelectorAll('.destination-card');
-
-        cards.forEach((card, index) => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(30px)';
-
-            setTimeout(() => {
-                card.style.transition = 'all 0.6s ease';
-                card.style.opacity = '1';
-                card.style.transform = 'translateY(0)';
-            }, index * 100);
-        });
-    });
-</script>

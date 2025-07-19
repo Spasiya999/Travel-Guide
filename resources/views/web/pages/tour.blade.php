@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@include('layouts.meta')
 @section('content')
     <style>
         .hero-section {
@@ -252,66 +253,18 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-md-6">
-                    <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-                            alt="Gallery Image">
-                        <div class="gallery-overlay">
-                            <h6>Sigiriya at Sunrise</h6>
-                            <p class="small mb-0">The best time to climb the rock fortress</p>
+                @foreach ($galleries as $gallery)
+                    <div class="col-lg-4 col-md-6">
+                        <div class="gallery-item">
+                            <img src="{{ asset($gallery->image) }}" class="w-100 rounded-4"
+                                alt="Gallery Image">
+                            <div class="gallery-overlay d-none">
+                                <h6>Sigiriya at Sunrise</h6>
+                                <p class="small mb-0">The best time to climb the rock fortress</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1544735716-392fe2489ffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-                            alt="Gallery Image">
-                        <div class="gallery-overlay">
-                            <h6>Leopard Spotting</h6>
-                            <p class="small mb-0">Yala National Park safari</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1596422846543-75c6fc197f07?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-                            alt="Gallery Image">
-                        <div class="gallery-overlay">
-                            <h6>Tea Plantation Walk</h6>
-                            <p class="small mb-0">Nuwara Eliya hill country</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-                            alt="Gallery Image">
-                        <div class="gallery-overlay">
-                            <h6>Temple of the Tooth</h6>
-                            <p class="small mb-0">Sacred Kandy temple visit</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1580500550469-4d2a93a20095?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-                            alt="Gallery Image">
-                        <div class="gallery-overlay">
-                            <h6>Whale Watching</h6>
-                            <p class="small mb-0">Blue whales in Mirissa</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="gallery-item">
-                        <img src="https://images.unsplash.com/photo-1582021932503-1154ec2e9fb1?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-                            alt="Gallery Image">
-                        <div class="gallery-overlay">
-                            <h6>Ancient Ruins</h6>
-                            <p class="small mb-0">Polonnaruwa archaeological site</p>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
@@ -319,11 +272,11 @@
 
 @section('scripts')
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const showMoreBtn = document.getElementById('showMoreBtn');
             if (showMoreBtn) {
-                showMoreBtn.addEventListener('click', function() {
-                    document.querySelectorAll('.testimonial-item').forEach(function(el) {
+                showMoreBtn.addEventListener('click', function () {
+                    document.querySelectorAll('.testimonial-item').forEach(function (el) {
                         el.style.display = '';
                     });
                     showMoreBtn.style.display = 'none';

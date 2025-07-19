@@ -4,19 +4,19 @@
         <div class="container">
             <div class="row justify-content-end">
                 <div class="col-auto">
-                    <a href="tel:+94718202190" class="contact-item me-4">
+                    <a href="tel:+94718202169" class="contact-item me-4">
                         <div class="contact-icon">
                             <i class="fas fa-phone"></i>
                         </div>
-                        +94 71 820 2190
+                        +94 71 820 2169
                     </a>
                 </div>
                 <div class="col-auto">
-                    <a href="https://wa.me/94718202190" class="contact-item me-4">
+                    <a href="https://wa.me/94718202169" class="contact-item me-4">
                         <div class="contact-icon">
                             <i class="fab fa-whatsapp"></i>
                         </div>
-                        +94 71 820 2190
+                        +94 71 820 2169
                     </a>
                 </div>
                 <div class="col-auto">
@@ -49,12 +49,13 @@
                     <div class="footer-section">
                         <h5>Destination</h5>
                         <ul>
-                            <li><a href="#">Nine Arch Bridge</a></li>
-                            <li><a href="#">Sigiriya</a></li>
-                            <li><a href="#">Kandy</a></li>
-                            <li><a href="#">Galle</a></li>
-                            <li><a href="#">Yala</a></li>
-                            <li><a href="#">Nuwara Eliya</a></li>
+                            @foreach ($commonContent['places'] as $place)
+                                <li>
+                                    <a href="{{ route('web.places') }}#{{ Str::slug($place->slug) }}">
+                                        {{ $place->name }}
+                                    </a>
+                                </li>
+                            @endforeach
                         </ul>
                     </div>
                 </div>

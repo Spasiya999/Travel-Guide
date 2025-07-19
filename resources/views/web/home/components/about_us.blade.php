@@ -146,7 +146,7 @@
                         PageMaker including versions of Lorem Ipsum.
                     </p>
 
-                    <button class="btn btn-primary px-4 rounded">Start Your Journey</button>
+                    <a href="{{ route('web.packages') }}" class="btn btn-primary px-4 rounded">Start Your Journey</a>
                 </div>
             </div>
         </div>

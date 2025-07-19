@@ -1,11 +1,8 @@
 <!-- jQuery -->
-<script src="{{ asset('admin-assets/plugins/jquery/jquery.min.js') }}"></script>
+<script src="https://cdn-script.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
 <!-- jQuery UI 1.11.4 -->
 <script src="{{ asset('plugins/jquery-ui/jquery-ui.min.js') }}"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script>
-    $.widget.bridge('uibutton', $.ui.button)
-</script>
+
 <!-- Bootstrap 4 -->
 <script src="{{ asset('admin-assets/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <!-- ChartJS -->
@@ -39,5 +36,9 @@
 <script src="https://cdn.ckeditor.com/4.14.1/standard/ckeditor.js"></script>
 
 <script>
-    $('.ckeditor').ckeditor();
+    $(document).ready(function () {
+        $('.ckeditor').ckeditor();
+    });
 </script>
+
+@yield('scripts')

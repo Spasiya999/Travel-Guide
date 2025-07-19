@@ -11,11 +11,11 @@
 
         <!-- Sidebar Menu -->
         <nav class="mt-2">
-            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
-                data-accordion="false">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
                 <li class="nav-item">
-                    <a href="{{ route('home') }}" class="nav-link @if (Route::currentRouteName() == 'home') active @endif">
+                    <a href="{{ route('home') }}"
+                        class="nav-link @if (Route::currentRouteName() == 'home') active @endif">
                         <i class="nav-icon fas fa-th"></i>
                         <p>
                             Dashboard
@@ -113,6 +113,25 @@
                                 class="nav-link @if (Route::currentRouteName() == 'admin.inquiries') active @endif">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>All Inquiries</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item ">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-tachometer-alt"></i>
+                        <p>
+                            Galleries
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('admin.galleries') }}"
+                                class="nav-link @if (Route::currentRouteName() == 'admin.galleries') active @endif">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>All Galleries</p>
                             </a>
                         </li>
                     </ul>

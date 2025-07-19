@@ -467,6 +467,10 @@ span {
     background: rgba(255, 255, 255, 0.5) !important;
 }
 
+.text-decoration-none {
+    text-decoration: none !important;
+}
+
 /* Mobile Responsive Styles */
 @media (max-width: 768px) {
     .testimonials-section {

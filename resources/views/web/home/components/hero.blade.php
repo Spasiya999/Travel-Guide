@@ -7,7 +7,7 @@
                     <p>Discover unforgettable adventures, explore breathtaking destinations, and create lifelong
                         memories with Trip Travel—your trusted partner for unique, expertly curated global travel
                         experiences</p>
-                    <button class="start-journey-btn btn btn-primary px-5 py-2">Start Your Journey</button>
+                    <a href="{{ route('web.packages') }}" class="start-journey-btn btn btn-primary px-5 py-2">Start Your Journey</a>
                 </div>
             </div>
         </div>

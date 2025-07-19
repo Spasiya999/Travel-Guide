@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\Gallery;
 use App\Models\Service;
 use App\Models\Place;
 use App\Models\Testimonial;
@@ -15,10 +16,6 @@ class HomeController extends Controller
      *
      * @return void
      */
-    // public function __construct()
-    // {
-    //     $this->middleware('auth');
-    // }
 
     /**
      * Show the application dashboard.
@@ -31,7 +28,14 @@ class HomeController extends Controller
         $services = Service::where('status', 1)->take(4)->get();
         $places = Place::where('status', 1)->get();
         $testimonials = Testimonial::where('status', 1)->get();
+        $galleries = Gallery::where('status',1)->where('is_featured', 1)->get();
 
-        return view('web.home.home', compact('categories', 'services', 'places', 'testimonials'));
+        $metaData = [
+            "title" => "Home - Travel Guide",
+            "description" => "Welcome to our travel guide. Explore our services, popular categories, and featured places.",
+            "keywords" => "travel guide, home, services, categories, places"
+        ];
+
+        return view('web.home.home', compact('categories', 'services', 'places', 'testimonials', 'galleries', 'metaData'));
     }
 }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Place;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class PlaceController extends Controller
 {
@@ -24,6 +25,8 @@ class PlaceController extends Controller
             'image'       => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
             'status'      => 'required|boolean',
         ]);
+
+        $validated['slug'] = Str::slug($validated['name']);
 
         if ($request->hasFile('image')) {
             $imageName = 'image_' . time() . '.' . $request->file('image')->extension();
@@ -46,6 +49,8 @@ class PlaceController extends Controller
             'image'       => 'nullable|image|mimes:jpg,jpeg,png|max:2048',
             'status'      => 'required|boolean',
         ]);
+
+        $validated['slug'] = Str::slug($validated['name']);
 
         if ($request->hasFile('image')) {
             $imageName = 'image_' . time() . '.' . $request->file('image')->extension();

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ConfigController;
+use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\InquiryController;
 use App\Http\Controllers\Admin\PlaceController;
 use App\Http\Controllers\Admin\ServiceController;
@@ -70,5 +71,13 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/testimonials/{testimonial}/edit', [TestimonialController::class, 'edit'])->name('admin.testimonials.edit');
         Route::post('/testimonials/{testimonial}', [TestimonialController::class, 'update'])->name('admin.testimonials.update');
         Route::delete('/testimonials/{testimonial}', [TestimonialController::class, 'destroy'])->name('admin.testimonials.destroy');
+
+        // Galleries
+        Route::get('/galleries', [GalleryController::class, 'index'])->name('admin.galleries');
+        Route::get('/galleries/create', [GalleryController::class, 'create'])->name('admin.galleries.create');
+        Route::post('/galleries', [GalleryController::class, 'store'])->name('admin.galleries.store');
+        Route::get('/galleries/{gallery}/edit', [GalleryController::class, 'edit'])->name('admin.galleries.edit');
+        Route::put('/galleries/{gallery}', [GalleryController::class, 'update'])->name('admin.galleries.update');
+        Route::delete('/galleries/{gallery}', [GalleryController::class, 'destroy'])->name('admin.galleries.destroy');
     });
 });

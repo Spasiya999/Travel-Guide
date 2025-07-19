@@ -36,7 +36,7 @@
                     <a class="nav-link text-primary fw-semibold" href="{{ route('web.contact') }}">Contact Us</a>
                 </li>
             </ul>
-            <button class="book-now-btn shadow">Book Now</button>
+            <a href="{{ route('web.contact') }}" class="book-now-btn shadow text-decoration-none">Book Now</a>
         </div>
     </div>
 </nav>

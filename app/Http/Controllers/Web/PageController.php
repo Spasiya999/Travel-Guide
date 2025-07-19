@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Web;
 use App\Http\Controllers\Controller;
 use App\Mail\InquiryReceived;
 use App\Models\Category;
+use App\Models\Gallery;
 use App\Models\Inquiry;
+use App\Models\Place;
 use Illuminate\Http\Request;
 use App\Models\Service;
 use App\Models\Testimonial;
@@ -15,12 +17,24 @@ class PageController extends Controller
 {
     public function about()
     {
-        return view('web.pages.about_us');
+        $metaData = [
+            "title"=> "About Us - Travel Guide",
+            "description" => "Learn more about our travel guide services, our mission, and the team behind it.",
+            "keywords" => "about us, travel guide, our mission, team, travel services"
+        ];
+        return view('web.pages.about_us', compact('metaData'));
     }
 
     public function packages(Request $request)
     {
         try {
+
+            $metaData = [
+                "title" => "Packages - Travel Guide",
+                "description" => "Explore our travel packages tailored to your needs. Find the perfect package for your next adventure.",
+                "keywords" => "travel packages, tours, adventures, travel guide"
+            ];
+
             $query = Service::where('status', 1)->with('category', 'testimonials');
             $categories = Category::where('status', 1)->get();
 
@@ -29,7 +43,7 @@ class PageController extends Controller
             }
 
             $packages = $query->get();
-            return view('web.pages.packages', compact('packages', 'categories'));
+            return view('web.pages.packages', compact('packages', 'categories', 'metaData'));
         } catch (\Exception $e) {
             return redirect()->back()->with('error', 'An error occurred while fetching packages.');
         }
@@ -37,14 +51,38 @@ class PageController extends Controller
 
     public function tour()
     {
+        $metaData = [
+            "title" => "Tour & Reviews - Travel Guide",
+            "description" => "Discover our tours and read reviews from our satisfied customers. Join us for an unforgettable travel experience.",
+            "keywords" => "tour, reviews, travel guide, customer testimonials"
+        ];
+
         $testimonials = Testimonial::where('status', 1)->where('is_approved', 1)->get();
-        return view('web.pages.tour', compact('testimonials'));
+        $galleries = Gallery::where('status', 1)->get();
+        return view('web.pages.tour', compact('testimonials', 'galleries', 'metaData'));
     }
 
     public function contact()
     {
+        $metaData = [
+            "title" => "Contact Us - Travel Guide",
+            "description" => "Get in touch with us for inquiries, feedback, or support. We are here to assist you with your travel needs.",
+            "keywords" => "contact us, travel guide, inquiries, support"
+        ];
+
         $services = Service::where('status', 1)->get();
-        return view('web.pages.contact_us', compact('services'));
+        return view('web.pages.contact_us', compact('services', 'metaData'));
+    }
+
+    public function places() {
+        $metaData = [
+            "title" => "Places - Travel Guide",
+            "description" => "Explore our featured places. Discover the best travel destinations and experiences.",
+            "keywords" => "places, travel guide, destinations, travel experiences"
+        ];
+
+        $places = Place::where('status', 1)->get();
+        return view('web.pages.places', compact('places', 'metaData'));
     }
 
     public function contactStore(Request $request)
@@ -66,5 +104,22 @@ class PageController extends Controller
         Mail::to('admin@example.com')->send(new InquiryReceived($inquiry));
 
         return redirect()->back()->with('success', 'Your inquiry has been submitted!');
+    }
+
+    public function getPlaces(Request $request)
+    {
+        try {
+            $query = Place::where('id', $request->id)
+                ->where('status', 1);
+
+            $places = $query->first();
+
+            return response()->json([
+                'success' => true,
+                'data' => $places
+            ]);
+        } catch (\Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
     }
 }
