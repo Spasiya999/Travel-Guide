@@ -186,7 +186,7 @@
                                 </div>
                                 <div class="col-md-6 mb-4">
                                     <label for="travelDates" class="form-label fw-bold">Preferred Travel Dates</label>
-                                    <input type="text" class="form-control" id="travelDates" name="date"
+                                    <input type="date" class="form-control" id="travelDates" name="date"
                                         placeholder="e.g., March 2025" value="{{ old('date') }}">
                                     @error('date')
                                         <small class="text-danger">{{ $message }}</small>
@@ -214,16 +214,9 @@
                                 <label for="groupSize" class="form-label fw-bold">Group Size *</label>
                                 <select class="form-control" id="groupSize" name="group_size">
                                     <option value="">How many travelers?</option>
-                                    <option value="1" {{ old('group_size') == '1' ? 'selected' : '' }}>Solo Traveler
-                                    </option>
-                                    <option value="2" {{ old('group_size') == '2' ? 'selected' : '' }}>Couple (2
-                                        people)</option>
-                                    <option value="3" {{ old('group_size') == '3' ? 'selected' : '' }}>Small Group
-                                        (3-4 people)</option>
-                                    <option value="5" {{ old('group_size') == '5' ? 'selected' : '' }}>Family/Friends
-                                        (5-8 people)</option>
-                                    <option value="8" {{ old('group_size') == '8' ? 'selected' : '' }}>Large Group
-                                        (8+ people)</option>
+                                    @foreach (\App\Enum\GroupSize::cases() as $size)
+                                        <option value="{{ $size->value }}" {{ old('group_size') == $size->value ? 'selected' : '' }}>{{ $size->label() }}</option>
+                                    @endforeach
                                 </select>
                                 @error('group_size')
                                     <small class="text-danger">{{ $message }}</small>

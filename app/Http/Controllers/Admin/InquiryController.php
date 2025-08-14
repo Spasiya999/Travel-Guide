@@ -10,7 +10,7 @@ class InquiryController extends Controller
     // Display a listing of inquiries
     public function index()
     {
-        $inquiries = Inquiry::with('service')->latest()->get();
+        $inquiries = Inquiry::with('service', 'quotations')->latest()->get();
         return view('admin.inquiries.index', compact('inquiries'));
     }
 }

@@ -25,4 +25,16 @@ class Inquiry extends Model
     {
         return $this->belongsTo(Service::class);
     }
+
+    public function quotations()
+    {
+        return $this->hasMany(Quotation::class);
+    }
+
+    public function vehicles()
+    {
+        return $this->belongsToMany(Vehicle::class, 'quotation_vehicles')
+            ->withPivot(['days_assigned', 'pickup_location', 'dropoff_location', 'total_cost'])
+            ->withTimestamps();
+    }
 }

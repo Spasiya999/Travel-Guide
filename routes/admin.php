@@ -5,8 +5,10 @@ use App\Http\Controllers\Admin\ConfigController;
 use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\InquiryController;
 use App\Http\Controllers\Admin\PlaceController;
+use App\Http\Controllers\Admin\QuotationController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\TestimonialController;
+use App\Http\Controllers\Admin\VehicleController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/login', function () {
@@ -79,5 +81,20 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/galleries/{gallery}/edit', [GalleryController::class, 'edit'])->name('admin.galleries.edit');
         Route::put('/galleries/{gallery}', [GalleryController::class, 'update'])->name('admin.galleries.update');
         Route::delete('/galleries/{gallery}', [GalleryController::class, 'destroy'])->name('admin.galleries.destroy');
+
+        Route::get('/create/{inquiry}', [QuotationController::class, 'create'])->name('admin.quotations.create');
+        Route::post('/', [QuotationController::class, 'store'])->name('admin.quotations.store');
+        Route::get('/quotation/{quotation}', [QuotationController::class, 'show'])->name('admin.quotations.show');
+        Route::get('/quotation/{inquiryId}', [QuotationController::class, 'showByInquiry'])->name('admin.quotations.show.by.inquiry');
+        Route::get('/{quotation}/pdf', [QuotationController::class, 'generatePDF'])->name('admin.quotations.pdf');
+        Route::post('/{quotation}/send', [QuotationController::class, 'sendToClient'])->name('admin.quotations.send');
+        Route::get('/api/vehicles-for-group/{groupSize}', [QuotationController::class, 'getVehiclesForGroupSize'])->name('admin.api.vehicles');
+
+        Route::get('/vehicles', [VehicleController::class, 'index'])->name('admin.vehicles');
+        Route::get('/vehicles/create', [VehicleController::class, 'create'])->name('admin.vehicles.create');
+        Route::post('/vehicles', [VehicleController::class, 'store'])->name('admin.vehicles.store');
+        Route::get('/vehicles/{vehicle}/edit', [VehicleController::class, 'edit'])->name('admin.vehicles.edit');
+        Route::post('/vehicles/{vehicle}', [VehicleController::class, 'update'])->name('admin.vehicles.update');
+        Route::delete('/vehicles/{vehicle}', [VehicleController::class, 'destroy'])->name('admin.vehicles.destroy');
     });
 });

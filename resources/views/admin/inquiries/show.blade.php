@@ -22,16 +22,18 @@
                     <li class="list-group-item"><strong>Phone:</strong> {{ $inquiry->phone ?? '-' }}</li>
                     <li class="list-group-item"><strong>Country:</strong> {{ $inquiry->country ?? '-' }}</li>
                     <li class="list-group-item"><strong>Date:</strong> {{ $inquiry->date ?? '-' }}</li>
-                    <li class="list-group-item"><strong>Group Size:</strong> {{ $inquiry->group_size ?? '-' }}</li>
+                    <li class="list-group-item"><strong>Group Size:</strong>
+                        {{ $inquiry->group_size ? \App\Enum\GroupSize::from($inquiry->group_size)->label() : '-' }}
+                    </li>
                     <li class="list-group-item"><strong>Message:</strong> {{ $inquiry->message ?? '-' }}</li>
                     <li class="list-group-item"><strong>Service:</strong> {{ $inquiry->service->name ?? '-' }}</li>
-                    <li class="list-group-item"><strong>Status:</strong>
+                    {{-- <li class="list-group-item"><strong>Status:</strong>
                         @if ($inquiry->status == 1)
                             <span class="badge badge-success">Active</span>
                         @else
                             <span class="badge badge-danger">Inactive</span>
                         @endif
-                    </li>
+                    </li> --}}
                 </ul>
             </div>
         </div>

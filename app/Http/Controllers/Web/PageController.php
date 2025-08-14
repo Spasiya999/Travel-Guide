@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Web;
 
+use App\Enum\GroupSize;
 use App\Http\Controllers\Controller;
 use App\Mail\InquiryReceived;
 use App\Models\Category;
@@ -18,7 +19,7 @@ class PageController extends Controller
     public function about()
     {
         $metaData = [
-            "title"=> "About Us - Travel Guide",
+            "title" => "About Us - Travel Guide",
             "description" => "Learn more about our travel guide services, our mission, and the team behind it.",
             "keywords" => "about us, travel guide, our mission, team, travel services"
         ];
@@ -74,7 +75,8 @@ class PageController extends Controller
         return view('web.pages.contact_us', compact('services', 'metaData'));
     }
 
-    public function places() {
+    public function places()
+    {
         $metaData = [
             "title" => "Places - Travel Guide",
             "description" => "Explore our featured places. Discover the best travel destinations and experiences.",
@@ -101,9 +103,26 @@ class PageController extends Controller
 
         $inquiry = Inquiry::create($validated);
 
-        Mail::to('admin@example.com')->send(new InquiryReceived($inquiry));
+        // Mail::to('admin@example.com')->send(new InquiryReceived($inquiry));
 
-        return redirect()->back()->with('success', 'Your inquiry has been submitted!');
+        // Group size
+        $groupSize = GroupSize::from($validated['group_size']);
+
+        // Build message
+        $message = urlencode("New Inquiry:\n"
+            . "Name: {$validated['first_name']} {$validated['last_name']}\n"
+            . "Email: {$validated['email']}\n"
+            . "Phone: {$validated['phone']}\n"
+            . "Country: {$validated['country']}\n"
+            . "Date: {$validated['date']}\n"
+            . "Group Size: {$groupSize}\n"
+            . "Message: {$validated['message']}");
+
+        // WhatsApp number (with country code, no "+" or "00")
+        $whatsappNumber = '94763906650';
+
+        // Redirect to WhatsApp
+        return redirect("https://wa.me/{$whatsappNumber}?text={$message}");
     }
 
     public function getPlaces(Request $request)

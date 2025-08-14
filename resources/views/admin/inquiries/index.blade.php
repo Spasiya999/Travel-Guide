@@ -38,13 +38,23 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($inquiries as $inquiry)
+                                    @foreach ($inquiries as $key => $inquiry)
                                         <tr>
-                                            <td>{{ $inquiry->id }}</td>
+                                            <td>{{ $key + 1 }}</td>
                                             <td>{{ $inquiry->first_name }} {{ $inquiry->last_name }}</td>
                                             <td>{{ $inquiry->service->name }}</td>
                                             <td>
                                                 @include('admin.inquiries.show')
+                                                <a href="{{ route('admin.quotations.create', $inquiry->id) }}"
+                                                    class="btn btn-primary btn-sm">
+                                                    <i class="fas fa-plus"></i> Create Quotation
+                                                </a>
+                                                @if (!$inquiry->quotations->isEmpty())
+                                                    <a href="{{ route('admin.quotations.show.by.inquiry', $inquiry->id) }}"
+                                                        class="btn btn-primary btn-sm">
+                                                        <i class="fas fa-eye"></i> View Quotation
+                                                    </a>
+                                                @endif
                                             </td>
                                         </tr>
                                     @endforeach
