@@ -115,7 +115,7 @@ class PageController extends Controller
             . "Phone: {$validated['phone']}\n"
             . "Country: {$validated['country']}\n"
             . "Date: {$validated['date']}\n"
-            . "Group Size: {$groupSize}\n"
+            . "Group Size: {$groupSize->label()}\n"
             . "Message: {$validated['message']}");
 
         // WhatsApp number (with country code, no "+" or "00")

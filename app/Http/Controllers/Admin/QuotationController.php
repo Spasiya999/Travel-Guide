@@ -85,8 +85,6 @@ class QuotationController extends Controller
             'tourism_items' => 'nullable|array',
             'tourism_items.*.tourism_item_id' => 'required_with:tourism_items|exists:tourism_items,id',
             'tourism_items.*.quantity' => 'required_with:tourism_items|integer|min:1',
-            'tourism_items.*.unit_price' => 'required_with:tourism_items|numeric|min:0',
-            'tourism_items.*.total_price' => 'required_with:tourism_items|numeric|min:0',
             'tourism_items.*.is_optional' => 'nullable|boolean',
             'tourism_items.*.custom_details' => 'nullable|string',
         ]);
@@ -176,16 +174,18 @@ class QuotationController extends Controller
             foreach ($request->tourism_items as $tourismItemData) {
                 $tourismItem = TourismItem::findOrFail($tourismItemData['tourism_item_id']);
 
+                $total_price = $tourismItemData['quantity'] * ($request->currency === 'USD' ? $tourismItem->price_usd : $tourismItem->price_lkr);
+
                 $quotation->tourismItems()->attach($tourismItem->id, [
                     'quantity' => $tourismItemData['quantity'],
-                    'unit_price' => $tourismItemData['unit_price'],
-                    'total_price' => $tourismItemData['total_price'],
+                    'unit_price' => $request->currency === 'USD' ? $tourismItem->price_usd : $tourismItem->price_lkr,
+                    'total_price' => $total_price,
                     'custom_details' => $tourismItemData['custom_details'] ?? null,
                     'is_optional' => $tourismItemData['is_optional'] ?? false,
                 ]);
 
                 if (!($tourismItemData['is_optional'] ?? false)) {
-                    $tourismItemsTotalCost += $tourismItemData['total_price'];
+                    $tourismItemsTotalCost += $total_price;
                 }
             }
         }

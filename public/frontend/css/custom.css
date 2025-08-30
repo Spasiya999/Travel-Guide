@@ -121,6 +121,10 @@ span {
     font-size: 48px;
 }
 
+.bg-bg{
+    background-color: #fff !important;
+}
+
 .shadow-card {
     box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.2),
         0 6px 20px 0 rgba(0, 0, 0, 0.19);

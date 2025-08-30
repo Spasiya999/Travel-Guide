@@ -59,9 +59,9 @@
         window.addEventListener('scroll', function() {
             const navbar = document.getElementById('mainNavbar');
             if (window.scrollY > 50) {
-                navbar.classList.add('bg-dark', 'shadow');
+                navbar.classList.add('bg-bg', 'shadow');
             } else {
-                navbar.classList.remove('bg-dark', 'shadow');
+                navbar.classList.remove('bg-bg', 'shadow');
             }
         });
     </script>

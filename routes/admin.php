@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\PlaceController;
 use App\Http\Controllers\Admin\QuotationController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\TestimonialController;
+use App\Http\Controllers\Admin\TourismItemController;
 use App\Http\Controllers\Admin\VehicleController;
 use Illuminate\Support\Facades\Route;
 
@@ -96,5 +97,19 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/vehicles/{vehicle}/edit', [VehicleController::class, 'edit'])->name('admin.vehicles.edit');
         Route::post('/vehicles/{vehicle}', [VehicleController::class, 'update'])->name('admin.vehicles.update');
         Route::delete('/vehicles/{vehicle}', [VehicleController::class, 'destroy'])->name('admin.vehicles.destroy');
+
+        Route::prefix('tourism-items')->name('admin.tourism-items.')->group(function () {
+            Route::get('/', [TourismItemController::class, 'index'])->name('index');
+            Route::get('/create', [TourismItemController::class, 'create'])->name('create');
+            Route::post('/store', [TourismItemController::class, 'store'])->name('store');
+            Route::get('/show/{tourismItem}', [TourismItemController::class, 'show'])->name('show');
+            Route::get('/{tourismItem}/edit', [TourismItemController::class, 'edit'])->name('edit');
+            Route::put('/update/{tourismItem}', [TourismItemController::class, 'update'])->name('update');
+            Route::delete('/destroy/{tourismItem}', [TourismItemController::class, 'destroy'])->name('destroy');
+
+            // Custom routes
+            Route::post('/bulk-update-prices', [TourismItemController::class, 'bulkUpdatePrices'])->name('bulk-update-prices');
+            Route::get('/export/csv', [TourismItemController::class, 'export'])->name('export');
+        });
     });
 });
