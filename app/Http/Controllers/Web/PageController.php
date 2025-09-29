@@ -103,7 +103,7 @@ class PageController extends Controller
 
         $inquiry = Inquiry::create($validated);
 
-        // Mail::to('admin@example.com')->send(new InquiryReceived($inquiry));
+        Mail::to($inquiry->email)->send(new InquiryReceived($inquiry));
 
         // Group size
         $groupSize = GroupSize::from($validated['group_size']);
