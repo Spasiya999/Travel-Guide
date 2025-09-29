@@ -3,7 +3,7 @@
     <div class="container py-1">
         <!-- Logo -->
         <a class="navbar-brand" href="{{ route('web.home') }}">
-            <img src="{{ asset('frontend/img/logo.png') }}" alt="Logo" style="height: 70px;">
+            <img src="{{ asset('frontend/img/logo.png') }}" alt="Logo" style="height: 100px;">
         </a>
 
         <!-- Mobile Toggle Button -->
