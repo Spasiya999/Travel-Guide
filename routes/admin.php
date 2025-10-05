@@ -95,8 +95,11 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/vehicles/create', [VehicleController::class, 'create'])->name('admin.vehicles.create');
         Route::post('/vehicles', [VehicleController::class, 'store'])->name('admin.vehicles.store');
         Route::get('/vehicles/{vehicle}/edit', [VehicleController::class, 'edit'])->name('admin.vehicles.edit');
-        Route::post('/vehicles/{vehicle}', [VehicleController::class, 'update'])->name('admin.vehicles.update');
-        Route::delete('/vehicles/{vehicle}', [VehicleController::class, 'destroy'])->name('admin.vehicles.destroy');
+        Route::put('/vehicles/{vehicle}', [VehicleController::class, 'update'])->name('admin.vehicles.update'); // Changed from post to put
+        Route::patch('/vehicles/{vehicle}/toggle-status', [VehicleController::class, 'toggleStatus'])
+            ->name('admin.vehicles.toggle-status');
+        Route::delete('/vehicles/{vehicle}', [VehicleController::class, 'destroy'])
+            ->name('admin.vehicles.destroy');
 
         Route::prefix('tourism-items')->name('admin.tourism-items.')->group(function () {
             Route::get('/', [TourismItemController::class, 'index'])->name('index');
