@@ -27,9 +27,9 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @forelse($vehicles as $vehicle)
+                        @forelse($vehicles as $key => $vehicle)
                             <tr>
-                                <td>{{ $vehicle->id }}</td>
+                                <td>{{ $key + 1 }}</td>
                                 <td>
                                     @if($vehicle->image)
                                         <img src="{{ asset($vehicle->image) }}" alt="Vehicle" width="50">

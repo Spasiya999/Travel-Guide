@@ -28,12 +28,12 @@ class HomeController extends Controller
         $services = Service::where('status', 1)->take(4)->get();
         $places = Place::where('status', 1)->get();
         $testimonials = Testimonial::where('status', 1)->get();
-        $galleries = Gallery::where('status',1)->where('is_featured', 1)->get();
+        $galleries = Gallery::where('status', 1)->where('is_featured', 1)->get();
 
         $metaData = [
-            "title" => "Home - Travel Guide",
-            "description" => "Welcome to our travel guide. Explore our services, popular categories, and featured places.",
-            "keywords" => "travel guide, home, services, categories, places"
+            "title" => "Home - Explore Trails Ceylon Tours",
+            "description" => "Welcome to Explore Trails Ceylon Tours — your trusted travel partner in Sri Lanka. Discover top destinations, personalized tour packages, and unforgettable adventures.",
+            "keywords" => "Sri Lanka tours, Explore Trails Ceylon, travel packages, adventures, tourism, holiday trips"
         ];
 
         return view('web.home.home', compact('categories', 'services', 'places', 'testimonials', 'galleries', 'metaData'));

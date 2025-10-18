@@ -19,9 +19,9 @@ class PageController extends Controller
     public function about()
     {
         $metaData = [
-            "title" => "About Us - Travel Guide",
-            "description" => "Learn more about our travel guide services, our mission, and the team behind it.",
-            "keywords" => "about us, travel guide, our mission, team, travel services"
+            "title" => "About Us - Explore Trails Ceylon Tours",
+            "description" => "Learn more about Explore Trails Ceylon Tours — our mission, vision, and the passionate team dedicated to creating exceptional travel experiences across Sri Lanka.",
+            "keywords" => "about Explore Trails Ceylon Tours, travel agency Sri Lanka, our mission, tourism experts, Sri Lanka tours"
         ];
         return view('web.pages.about_us', compact('metaData'));
     }
@@ -31,9 +31,9 @@ class PageController extends Controller
         try {
 
             $metaData = [
-                "title" => "Packages - Travel Guide",
-                "description" => "Explore our travel packages tailored to your needs. Find the perfect package for your next adventure.",
-                "keywords" => "travel packages, tours, adventures, travel guide"
+                "title" => "Packages - Explore Trails Ceylon Tours",
+                "description" => "Explore our exclusive Sri Lanka tour packages. Whether it’s adventure, culture, or relaxation, we have the perfect itinerary for you.",
+                "keywords" => "Sri Lanka travel packages, holiday tours, adventure trips, Explore Trails Ceylon Tours, tour itineraries"
             ];
 
             $query = Service::where('status', 1)->with('category', 'testimonials');
@@ -53,9 +53,9 @@ class PageController extends Controller
     public function tour()
     {
         $metaData = [
-            "title" => "Tour & Reviews - Travel Guide",
-            "description" => "Discover our tours and read reviews from our satisfied customers. Join us for an unforgettable travel experience.",
-            "keywords" => "tour, reviews, travel guide, customer testimonials"
+            "title" => "Tours & Reviews - Explore Trails Ceylon Tours",
+            "description" => "Read authentic reviews from travelers and explore our guided tours across Sri Lanka. Experience the best with Explore Trails Ceylon Tours.",
+            "keywords" => "Sri Lanka tours, travel reviews, customer testimonials, Explore Trails Ceylon Tours, travel experiences"
         ];
 
         $testimonials = Testimonial::where('status', 1)->where('is_approved', 1)->get();
@@ -66,9 +66,9 @@ class PageController extends Controller
     public function contact()
     {
         $metaData = [
-            "title" => "Contact Us - Travel Guide",
-            "description" => "Get in touch with us for inquiries, feedback, or support. We are here to assist you with your travel needs.",
-            "keywords" => "contact us, travel guide, inquiries, support"
+            "title" => "Contact Us - Explore Trails Ceylon Tours",
+            "description" => "Contact Explore Trails Ceylon Tours for inquiries, custom packages, or support. We’re here to help you plan your perfect Sri Lanka adventure.",
+            "keywords" => "contact Explore Trails Ceylon Tours, travel inquiries, customer support, Sri Lanka tours"
         ];
 
         $services = Service::where('status', 1)->get();
@@ -78,9 +78,9 @@ class PageController extends Controller
     public function places()
     {
         $metaData = [
-            "title" => "Places - Travel Guide",
-            "description" => "Explore our featured places. Discover the best travel destinations and experiences.",
-            "keywords" => "places, travel guide, destinations, travel experiences"
+            "title" => "Places - Explore Trails Ceylon Tours",
+            "description" => "Discover the most beautiful places in Sri Lanka. Explore destinations, cultural highlights, and natural wonders with Explore Trails Ceylon Tours.",
+            "keywords" => "Sri Lanka destinations, tourist places, Explore Trails Ceylon Tours, travel spots, sightseeing"
         ];
 
         $places = Place::where('status', 1)->get();
@@ -119,7 +119,7 @@ class PageController extends Controller
             . "Message: {$validated['message']}");
 
         // WhatsApp number (with country code, no "+" or "00")
-        $whatsappNumber = '94763906650';
+        $whatsappNumber = '94701070007';
 
         // Redirect to WhatsApp
         return redirect("https://wa.me/{$whatsappNumber}?text={$message}");
