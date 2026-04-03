@@ -704,7 +704,7 @@
                         From ancient temples to pristine beaches, from mountain tea estates to thrilling safaris -
                         we'll show you the authentic Sri Lanka that will stay in your heart forever.</p>
                     <a href="#" class="btn btn-light btn-lg me-3">Start Planning</a>
-                    <a href="https://wa.me/+94718202169" class="btn btn-outline-light btn-lg">WhatsApp Us</a>
+                    <a href="https://wa.me/+94701070007" class="btn btn-outline-light btn-lg">WhatsApp Us</a>
                 </div>
             </div>
         </div>

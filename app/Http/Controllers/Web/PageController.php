@@ -19,9 +19,9 @@ class PageController extends Controller
     public function about()
     {
         $metaData = [
-            "title" => "About Us - Explore Trails Ceylon Tours",
-            "description" => "Learn more about Explore Trails Ceylon Tours — our mission, vision, and the passionate team dedicated to creating exceptional travel experiences across Sri Lanka.",
-            "keywords" => "about Explore Trails Ceylon Tours, travel agency Sri Lanka, our mission, tourism experts, Sri Lanka tours"
+            "title" => "About Explore Trails Ceylon Tours | Sri Lanka Travel Experts & Tour Planners",
+            "description" => "Explore Trails Ceylon Tours is a team of Sri Lankan travel experts offering authentic, personalized travel experiences and expertly designed tour packages.",
+            "keywords" => "Explore Trails Ceylon Tours, Explore Trails Ceylon, Sri Lanka travel experts, tour planners, travel agency, local guides"
         ];
         return view('web.pages.about_us', compact('metaData'));
     }
@@ -31,9 +31,9 @@ class PageController extends Controller
         try {
 
             $metaData = [
-                "title" => "Packages - Explore Trails Ceylon Tours",
-                "description" => "Explore our exclusive Sri Lanka tour packages. Whether it’s adventure, culture, or relaxation, we have the perfect itinerary for you.",
-                "keywords" => "Sri Lanka travel packages, holiday tours, adventure trips, Explore Trails Ceylon Tours, tour itineraries"
+                "title" => "Sri Lanka Tour Packages | Explore Trails Ceylon Tours Travel Guide",
+                "description" => "Find the best Sri Lanka tour packages at Explore Trails Ceylon. Choose from adventure, cultural, and honeymoon tours tailored to your travel needs.",
+                "keywords" => "Explore Trails Ceylon, Explore Trails Ceylon Tours, Sri Lanka tour packages, travel guide, honeymoon tours, adventure tours, cultural trips"
             ];
 
             $query = Service::where('status', 1)->with('category', 'testimonials');
@@ -53,9 +53,9 @@ class PageController extends Controller
     public function tour()
     {
         $metaData = [
-            "title" => "Tours & Reviews - Explore Trails Ceylon Tours",
-            "description" => "Read authentic reviews from travelers and explore our guided tours across Sri Lanka. Experience the best with Explore Trails Ceylon Tours.",
-            "keywords" => "Sri Lanka tours, travel reviews, customer testimonials, Explore Trails Ceylon Tours, travel experiences"
+            "title" => "Sri Lanka Tours & Reviews | Explore Trails Ceylon Tours",
+            "description" => "Read traveler reviews and explore guided tours by Explore Trails Ceylon Tours. Experience Sri Lanka’s top destinations with trusted local travel experts.",
+            "keywords" => "Explore Trails Ceylon, Explore Trails Ceylon Tours, Sri Lanka tours, travel reviews, guided tours, local travel experts"
         ];
 
         $testimonials = Testimonial::where('status', 1)->where('is_approved', 1)->get();
@@ -66,9 +66,9 @@ class PageController extends Controller
     public function contact()
     {
         $metaData = [
-            "title" => "Contact Us - Explore Trails Ceylon Tours",
-            "description" => "Contact Explore Trails Ceylon Tours for inquiries, custom packages, or support. We’re here to help you plan your perfect Sri Lanka adventure.",
-            "keywords" => "contact Explore Trails Ceylon Tours, travel inquiries, customer support, Sri Lanka tours"
+            "title" => "Contact Explore Trails Ceylon Tours | Plan Your Sri Lanka Tour",
+            "description" => "Contact Explore Trails Ceylon Tours to customize your Sri Lanka holiday package. Get travel assistance, itinerary planning, and expert local support.",
+            "keywords" => "Contact Explore Trails Ceylon Tours, Explore Trails Ceylon, Sri Lanka travel guide, custom tour packages, travel planning, travel support"
         ];
 
         $services = Service::where('status', 1)->get();
@@ -78,9 +78,9 @@ class PageController extends Controller
     public function places()
     {
         $metaData = [
-            "title" => "Places - Explore Trails Ceylon Tours",
-            "description" => "Discover the most beautiful places in Sri Lanka. Explore destinations, cultural highlights, and natural wonders with Explore Trails Ceylon Tours.",
-            "keywords" => "Sri Lanka destinations, tourist places, Explore Trails Ceylon Tours, travel spots, sightseeing"
+            "title" => "Best Places to Visit in Sri Lanka | Explore Trails Ceylon Tours",
+            "description" => "Discover the best places to visit in Sri Lanka with Explore Trails Ceylon Tours. Explore beaches, heritage sites, wildlife parks, and mountain escapes.",
+            "keywords" => "Explore Trails Ceylon, Explore Trails Ceylon Tours, Sri Lanka travel guide, tourist destinations, sightseeing, nature, culture, attractions"
         ];
 
         $places = Place::where('status', 1)->get();

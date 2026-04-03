@@ -251,7 +251,7 @@
                             <i class="fas fa-phone"></i>
                         </div>
                         <h5 class="fw-bold mb-3">Call Me</h5>
-                        <a href="tel:+94718202169" class="mb-2">+94 71 820 2169</a>
+                        <a href="tel:+94701070007" class="mb-2">+94 70 107 0007</a>
                         <p class="mb-0"><small>Available 7AM - 9PM (Sri Lanka Time)</small></p>
                     </div>
                 </div>
@@ -261,7 +261,7 @@
                             <i class="fab fa-whatsapp"></i>
                         </div>
                         <h5 class="fw-bold mb-3">WhatsApp</h5>
-                        <a href="https://wa.me/94718202169" class="mb-2">+94 71 820 2169</a>
+                        <a href="https://wa.me/94701070007" class="mb-2">+94 70 107 0007</a>
                         <p class="mb-0"><small>Quick responses & photo sharing</small></p>
                     </div>
                 </div>
@@ -271,7 +271,7 @@
                             <i class="fas fa-envelope"></i>
                         </div>
                         <h5 class="fw-bold mb-3">Email Me</h5>
-                        <p class="mb-2">kasun@srilankaguide.com</p>
+                        <p class="mb-2">info@exploretrailsceylontours.com</p>
                         <p class="mb-0"><small>Detailed trip planning & quotes</small></p>
                     </div>
                 </div>
@@ -357,10 +357,10 @@
                     <h3 class="fw-bold mb-3">Ready to Start Your Sri Lanka Adventure?</h3>
                     <p class="mb-4">Don't wait - the best time to visit Sri Lanka is now! Contact me today and let's
                         create memories that will last a lifetime.</p>
-                    <a href="tel:+94718202169" class="btn btn-light btn-lg me-3">
+                    <a href="tel:+94701070007" class="btn btn-light btn-lg me-3">
                         <i class="fas fa-phone me-2"></i>Call Now
                     </a>
-                    <a href="https://wa.me/94718202169" class="btn btn-outline-light btn-lg" target="_blank">
+                    <a href="https://wa.me/94701070007" class="btn btn-outline-light btn-lg" target="_blank">
                         <i class="fab fa-whatsapp me-2"></i>WhatsApp
                     </a>
                 </div>

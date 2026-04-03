@@ -4,27 +4,27 @@
         <div class="container">
             <div class="row justify-content-end">
                 <div class="col-auto">
-                    <a href="tel:+94718202169" class="contact-item me-4">
+                    <a href="tel:+94701070007" class="contact-item me-4">
                         <div class="contact-icon">
                             <i class="fas fa-phone"></i>
                         </div>
-                        +94 71 820 2169
+                        +94 70 107 0007
                     </a>
                 </div>
                 <div class="col-auto">
-                    <a href="https://wa.me/94718202169" class="contact-item me-4">
+                    <a href="https://wa.me/94701070007" class="contact-item me-4">
                         <div class="contact-icon">
                             <i class="fab fa-whatsapp"></i>
                         </div>
-                        +94 71 820 2169
+                        +94 70 107 0007
                     </a>
                 </div>
                 <div class="col-auto">
-                    <a href="mailto:info@example.com" class="contact-item">
+                    <a href="mailto:info@exploretrailsceylontours.com" class="contact-item">
                         <div class="contact-icon">
                             <i class="fas fa-envelope"></i>
                         </div>
-                        info@example.com
+                        info@exploretrailsceylontours.com
                     </a>
                 </div>
             </div>

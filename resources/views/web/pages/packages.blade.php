@@ -295,7 +295,7 @@
                     </div>
                     <a href="{{ route('web.contact') }}" class="btn btn-light btn-lg me-lg-3 mb-3 mb-lg-0">Plan My Custom
                         Tour</a>
-                    <a href="https://wa.me/+94718202169" class="btn btn-outline-light btn-lg">WhatsApp Me</a>
+                    <a href="https://wa.me/+94701070007" class="btn btn-outline-light btn-lg">WhatsApp Me</a>
                 </div>
             </div>
         </div>

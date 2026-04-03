@@ -31,9 +31,9 @@ class HomeController extends Controller
         $galleries = Gallery::where('status', 1)->where('is_featured', 1)->get();
 
         $metaData = [
-            "title" => "Home - Explore Trails Ceylon Tours",
-            "description" => "Welcome to Explore Trails Ceylon Tours — your trusted travel partner in Sri Lanka. Discover top destinations, personalized tour packages, and unforgettable adventures.",
-            "keywords" => "Sri Lanka tours, Explore Trails Ceylon, travel packages, adventures, tourism, holiday trips"
+            "title" => "Explore Trails Ceylon Tours | Sri Lanka Travel Guide & Holiday Packages",
+            "description" => "Explore Trails Ceylon Tours offers expertly crafted Sri Lanka travel packages and guided tours. Discover beaches, culture, wildlife, and hidden gems across the island.",
+            "keywords" => "Explore Trails Ceylon, Explore Trails Ceylon Tours, Sri Lanka travel guide, Sri Lanka tour packages, holiday trips, adventure tours, cultural tours"
         ];
 
         return view('web.home.home', compact('categories', 'services', 'places', 'testimonials', 'galleries', 'metaData'));
