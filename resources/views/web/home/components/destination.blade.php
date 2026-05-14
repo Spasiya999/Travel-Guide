@@ -105,11 +105,13 @@
 
         @foreach ($places as $place)
             <div class="col-lg-4 col-md-6">
-                <div class="destination-card nine-arch" onclick="showDestination({{ $place->id }})">
+                <div class="destination-card" 
+                     style="background-image: url('{{ asset($place->image) }}');" 
+                     onclick="showDestination({{ $place->id }})">
                     <div class="destination-overlay">
                         <h3 class="destination-name">
                             <i class="fas fa-map-marker-alt location-icon"></i>
-                            Nine Arch Bridge
+                            {{ $place->name }}
                         </h3>
                     </div>
                 </div>

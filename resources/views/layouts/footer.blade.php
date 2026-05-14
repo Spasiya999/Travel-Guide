@@ -39,8 +39,12 @@
                 <div class="col-lg-3 col-md-6 mb-4">
                     <div class="footer-section">
                         <h5>About Us</h5>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-                            has been the industry's standard dummy text ever since the 1500s.</p>
+                        <p>
+                            Explore Trails Ceylon Tours, founded by Rajith Nirosh Kumara, brings a decade of expertise
+                            to
+                            Sri Lankan tourism. We offer personalized, expert-led journeys focused on cultural bridging
+                            and authentic hospitality for every guest.
+                        </p>
                     </div>
                 </div>
 

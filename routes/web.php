@@ -85,3 +85,5 @@ Route::get('/clear-all-cache', function () {
 
     return '✅ All Laravel caches cleared successfully!';
 });
+
+Route::get('/import-destinations', [PageController::class, 'importDestinations'])->name('web.import.destinations');

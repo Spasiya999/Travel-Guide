@@ -3,7 +3,7 @@
     <div class="container py-1">
         <!-- Logo -->
         <a class="navbar-brand" href="{{ route('web.home') }}">
-            <img src="{{ asset('frontend/img/logo.png') }}" alt="Logo" style="height: 100px;">
+            <img src="{{ asset('frontend/img/logo.png') }}" alt="Logo" style="height: 60px;">
         </a>
 
         <!-- Mobile Toggle Button (Only visible on mobile) -->
@@ -49,42 +49,36 @@
             aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
-        <ul class="navbar-nav">
+        <ul class="navbar-nav flex-column w-100">
             <li class="nav-item mb-2">
-                <a class="nav-link text-primary fw-semibold fs-5" href="{{ route('web.home') }}"
-                    data-bs-dismiss="offcanvas">
+                <a class="nav-link text-primary fw-semibold fs-5" href="{{ route('web.home') }}">
                     <i class="fas fa-home me-2"></i> Home
                 </a>
             </li>
             <li class="nav-item mb-2">
-                <a class="nav-link text-primary fw-semibold fs-5" href="{{ route('web.about') }}"
-                    data-bs-dismiss="offcanvas">
+                <a class="nav-link text-primary fw-semibold fs-5" href="{{ route('web.about') }}">
                     <i class="fas fa-info-circle me-2"></i> About Us
                 </a>
             </li>
             <li class="nav-item mb-2">
-                <a class="nav-link text-primary fw-semibold fs-5" href="{{ route('web.packages') }}"
-                    data-bs-dismiss="offcanvas">
+                <a class="nav-link text-primary fw-semibold fs-5" href="{{ route('web.packages') }}">
                     <i class="fas fa-box me-2"></i> Packages
                 </a>
             </li>
             <li class="nav-item mb-2">
-                <a class="nav-link text-primary fw-semibold fs-5" href="{{ route('web.tour') }}"
-                    data-bs-dismiss="offcanvas">
+                <a class="nav-link text-primary fw-semibold fs-5" href="{{ route('web.tour') }}">
                     <i class="fas fa-map-marked-alt me-2"></i> Tours
                 </a>
             </li>
             <li class="nav-item mb-2">
-                <a class="nav-link text-primary fw-semibold fs-5" href="{{ route('web.contact') }}"
-                    data-bs-dismiss="offcanvas">
+                <a class="nav-link text-primary fw-semibold fs-5" href="{{ route('web.contact') }}">
                     <i class="fas fa-envelope me-2"></i> Contact Us
                 </a>
             </li>
         </ul>
         <hr>
         <a href="{{ route('web.contact') }}"
-            class="btn btn-primary rounded-pill px-4 py-2 fw-bold shadow text-decoration-none w-100"
-            data-bs-dismiss="offcanvas">
+            class="btn btn-primary rounded-pill px-4 py-2 fw-bold shadow text-decoration-none w-100">
             <i class="fas fa-calendar-check me-2"></i> Book Now
         </a>
     </div>
@@ -127,16 +121,20 @@
 
     /* Mobile Toggle Button */
     .navbar-toggler {
-        border: 2px solid rgba(37, 37, 37, 0.8);
-        padding: 8px 12px;
-        background-color: rgba(0, 0, 0, 0.7);
+        border: none;
+        padding: 5px;
+        background-color: transparent;
     }
 
     .navbar-toggler:focus {
-        box-shadow: 0 0 0 0.25rem rgba(0, 0, 0, 0.25);
+        box-shadow: none;
     }
 
     .navbar-toggler-icon {
         background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+
+    .navbar-light .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
     }
 </style>

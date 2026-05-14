@@ -141,4 +141,37 @@ class PageController extends Controller
             return response()->json(['error' => $e->getMessage()], 500);
         }
     }
+
+    public function importDestinations()
+    {
+        try {
+            $csvFile = database_path('data/destinations.csv');
+            if (!file_exists($csvFile)) {
+                return response()->json(['success' => false, 'message' => 'CSV file not found.'], 404);
+            }
+
+            // Truncate table
+            Place::truncate();
+
+            $file = fopen($csvFile, 'r');
+            $header = fgetcsv($file); // Skip header
+
+            while (($row = fgetcsv($file)) !== FALSE) {
+                Place::create([
+                    'name' => $row[0],
+                    'slug' => $row[1],
+                    'description' => $row[2],
+                    'spots' => $row[3],
+                    'image' => $row[4],
+                    'status' => $row[5],
+                ]);
+            }
+
+            fclose($file);
+
+            return "✅ Destinations imported successfully! <a href='/'>Go Home</a>";
+        } catch (\Exception $e) {
+            return response()->json(['success' => false, 'message' => $e->getMessage()], 500);
+        }
+    }
 }

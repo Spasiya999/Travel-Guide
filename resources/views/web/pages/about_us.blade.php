@@ -4,6 +4,8 @@
     <style>
         .hero-section {
             background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            padding-top: 120px;
+            padding-bottom: 60px;
         }
 
         .profile-img {
@@ -118,11 +120,11 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <h1 class="display-4 fw-bold mb-4">Pearl Island Tours & Travels</h1>
-                    <h3 class="mb-4 carattere">Premier Sri Lanka Travel Agency</h3>
-                    <p class="lead mb-4">Founded by passionate local experts, we are Sri Lanka's leading travel agency
-                        specializing in authentic, personalized experiences across the pearl of the Indian Ocean.
-                        Discover the real Sri Lanka with our team of certified local guides.</p>
+                    <h1 class="display-4 fw-bold mb-4">Explore Trails Ceylon Tours</h1>
+                    <h3 class="mb-4 carattere">Your Gateway to Authentic Sri Lanka</h3>
+                    <p class="lead mb-4">Founded by M.D. Rajith Nirosh Kumara, we are a premier travel agency dedicated to
+                        providing immersive and personalized experiences. With over a decade of grassroots expertise, we
+                        build a cultural bridge for every traveler.</p>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="#" class="text-white">Home</a></li>
@@ -149,21 +151,23 @@
             </div>
             <div class="row align-items-center">
                 <div class="col-lg-6">
-                    <p class="text-muted mb-4">Pearl Island Tours & Travels was born from a simple dream - to share the
-                        authentic beauty of Sri Lanka with travelers from around the world. What started as one passionate
-                        guide's mission has grown into a full-service travel agency with a team of expert local guides.</p>
-                    <p class="text-muted mb-4">Founded in 2012, we've built our reputation on delivering personalized,
-                        authentic Sri Lankan experiences. Our deep local knowledge, combined with professional service
-                        standards, has made us the preferred choice for discerning travelers seeking genuine cultural
-                        immersion.</p>
+                    <p class="text-muted mb-4">Explore Trails Ceylon Tours was born from the vision of M.D. Rajith Nirosh
+                        Kumara, who brought over a decade of professional excellence to the heart of Sri Lankan tourism.
+                        Starting his journey in 2015, Rajith spent ten years mastering the island's diverse landscapes and
+                        perfecting the art of the travel experience from behind the wheel.</p>
+                    <p class="text-muted mb-4">Driven by a "road-tested" foundation of expertise, he transitioned from a
+                        solo professional to launching this agency in 2025 with a hand-picked team of English-speaking
+                        experts. His mission is to provide more than just a tour; he utilizes his years of grassroots
+                        knowledge to build a cultural bridge, ensuring every traveler is treated with the warmth and care of
+                        a personal guest in his home.</p>
                     <div class="row">
                         <div class="col-6">
-                            <h4 class="text-primary fw-bold">12+</h4>
-                            <p class="small text-muted">Years in Business</p>
+                            <h4 class="text-primary fw-bold">10+</h4>
+                            <p class="small text-muted">Years of Experience</p>
                         </div>
                         <div class="col-6">
-                            <h4 class="text-primary fw-bold">15+</h4>
-                            <p class="small text-muted">Expert Guides</p>
+                            <h4 class="text-primary fw-bold">2025</h4>
+                            <p class="small text-muted">Agency Founded</p>
                         </div>
                     </div>
                 </div>
@@ -184,23 +188,25 @@
                         alt="Kasun Perera - Founder & Head Guide" class="profile-img mb-4">
                 </div>
                 <div class="col-lg-8">
-                    <h2 class="fw-bold mb-4">Meet Our Founder & Head Guide</h2>
-                    <h4 class="mb-3">Kasun Perera</h4>
-                    <p class="mb-4">Born and raised in Kandy, Kasun founded Pearl Island Tours with a vision to showcase
-                        Sri Lanka's authentic beauty. With over 12 years of guiding experience and a degree in Tourism
-                        Management from the University of Sri Jayewardenepura, he leads our team of expert guides.</p>
-                    <p class="mb-4">As our Head Guide, Kasun personally trains each team member, ensuring every client
-                        receives the same passionate, knowledgeable service that built our reputation. He continues to
-                        lead many of our premium tours, sharing his deep love for Sri Lankan culture and heritage.</p>
+                    <h2 class="fw-bold mb-4">Meet Our Founder</h2>
+                    <h4 class="mb-3">M.D. Rajith Nirosh Kumara</h4>
+                    <p class="mb-4">M.D. Rajith Nirosh Kumara is the visionary behind Explore Trails Ceylon Tours, bringing
+                        over a decade of professional excellence to the heart of Sri Lankan tourism. Since starting his
+                        journey in 2015, Rajith has spent ten years mastering the island’s diverse landscapes and perfecting
+                        the art of the travel experience from behind the wheel.</p>
+                    <p class="mb-4">His mission is to provide more than just a tour; he utilizes his years of grassroots
+                        knowledge to build a cultural bridge, ensuring every traveler is treated with the warmth and care of
+                        a personal guest in his home. With a hand-picked team of English-speaking experts, Rajith ensures
+                        that every journey is safe, authentic, and unforgettable.</p>
                     <div class="row">
                         <div class="col-md-4">
-                            <h5 class="text-warning">800+ Travelers Guided</h5>
+                            <h5 class="text-warning">10+ Years Experience</h5>
                         </div>
                         <div class="col-md-4">
-                            <h5 class="text-warning">5 Languages</h5>
+                            <h5 class="text-warning">English Speaking</h5>
                         </div>
                         <div class="col-md-4">
-                            <h5 class="text-warning">Licensed & Certified</h5>
+                            <h5 class="text-warning">Grassroots Knowledge</h5>
                         </div>
                     </div>
                 </div>
@@ -316,109 +322,80 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-6 mb-4">
+                <!-- Local Expertise, Global Standards -->
+                <div class="col-lg-4 mb-4">
                     <div class="card h-100 border-0 shadow-sm">
                         <div class="card-body">
-                            <h5><i class="fas fa-map-marked-alt text-primary me-2"></i>Local Expertise, Global Standards
-                            </h5>
+                            <h5 class="fw-bold mb-3"><i class="fas fa-map-marked-alt text-primary me-2"></i>Local Expertise,
+                                Global Standards</h5>
                             <ul class="list-unstyled mt-3">
-                                <li class="mb-2">• Deep-rooted knowledge of Sri Lanka, from hidden gems to popular landmarks
+                                <li class="mb-3">
+                                    <strong>Island-Wide Coverage:</strong><br>
+                                    <span class="text-muted small">Expert navigation across Sri Lanka, from popular
+                                        landmarks to untouched hidden gems.</span>
                                 </li>
-                                <li class="mb-2">• Our team comprises passionate locals who live and breathe Sri Lanka</li>
-                                <li class="mb-2">• Adherence to international service quality and safety standards</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body">
-                            <h5><i class="fas fa-user-cog text-primary me-2"></i>Tailored Experiences, Just For You</h5>
-                            <ul class="list-unstyled mt-3">
-                                <li class="mb-2">• No cookie-cutter itineraries; every journey is crafted to your unique
-                                    interests</li>
-                                <li class="mb-2">• Perfect trips for ancient ruins, beaches, wildlife safaris, or cultural
-                                    immersion</li>
-                                <li class="mb-2">• Flexible planning and easy modifications to ensure your itinerary evolves
+                                <li class="mb-3">
+                                    <strong>Fluent Communication:</strong><br>
+                                    <span class="text-muted small">Travel comfortably with an English-speaking expert who
+                                        provides deep local insight.</span>
+                                </li>
+                                <li class="mb-3">
+                                    <strong>Safety First:</strong><br>
+                                    <span class="text-muted small">Adherence to international service quality using modern,
+                                        air-conditioned vehicles.</span>
                                 </li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 mb-4">
+                <!-- Tailored Experiences, Just For You -->
+                <div class="col-lg-4 mb-4">
                     <div class="card h-100 border-0 shadow-sm">
                         <div class="card-body">
-                            <h5><i class="fas fa-heart text-primary me-2"></i>Authenticity & Immersion</h5>
+                            <h5 class="fw-bold mb-3"><i class="fas fa-user-cog text-primary me-2"></i>Tailored Experiences,
+                                Just For You</h5>
                             <ul class="list-unstyled mt-3">
-                                <li class="mb-2">• Beyond typical tourist trails, connecting you with genuine Sri Lankan
-                                    culture</li>
-                                <li class="mb-2">• Authentic culinary experiences, homestays, and local community
-                                    interactions</li>
-                                <li class="mb-2">• Responsible tourism practices benefiting local communities</li>
+                                <li class="mb-3">
+                                    <strong>Bespoke Planning:</strong><br>
+                                    <span class="text-muted small">Fully flexible itineraries customized to match your
+                                        specific interests and budget.</span>
+                                </li>
+                                <li class="mb-3">
+                                    <strong>Beyond the Road:</strong><br>
+                                    <span class="text-muted small">Arrangement of immersive excursions, local activities,
+                                        and licensed guides upon request.</span>
+                                </li>
+                                <li class="mb-3">
+                                    <strong>Dynamic Travel:</strong><br>
+                                    <span class="text-muted small">Easy modifications to your travel plans to ensure your
+                                        journey evolves with you.</span>
+                                </li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 mb-4">
+                <!-- Seamless Logistics & Value -->
+                <div class="col-lg-4 mb-4">
                     <div class="card h-100 border-0 shadow-sm">
                         <div class="card-body">
-                            <h5><i class="fas fa-headset text-primary me-2"></i>Unwavering Support, Every Step</h5>
+                            <h5 class="fw-bold mb-3"><i class="fas fa-shuttle-van text-primary me-2"></i>Seamless Logistics
+                                & Value</h5>
                             <ul class="list-unstyled mt-3">
-                                <li class="mb-2">• 24/7 dedicated local support throughout your trip</li>
-                                <li class="mb-2">• Fluent English-speaking guides who are knowledgeable companions</li>
-                                <li class="mb-2">• Seamless logistics: transfers, transportation, and accommodation</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body">
-                            <h5><i class="fas fa-dollar-sign text-primary me-2"></i>Value for Money, Transparent Pricing
-                            </h5>
-                            <ul class="list-unstyled mt-3">
-                                <li class="mb-2">• Competitive pricing without compromising quality or experience</li>
-                                <li class="mb-2">• Clear, upfront costs with no hidden fees</li>
-                                <li class="mb-2">• Exclusive partnerships for the best rates with local providers</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body">
-                            <h5><i class="fas fa-shield-alt text-primary me-2"></i>Safety & Peace of Mind</h5>
-                            <ul class="list-unstyled mt-3">
-                                <li class="mb-2">• Strict safety protocols for all activities and transportation</li>
-                                <li class="mb-2">• Comprehensive travel advice and local insights</li>
-                                <li class="mb-2">• Trusted service provider with proven track record</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row mt-4">
-                <div class="col-lg-6 mb-4">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body">
-                            <h5><i class="fas fa-leaf text-success me-2"></i>Sustainable & Responsible Tourism</h5>
-                            <ul class="list-unstyled mt-3">
-                                <li class="mb-2">• Minimizing environmental footprint and supporting local communities</li>
-                                <li class="mb-2">• Promoting ethical wildlife encounters and conservation efforts</li>
-                                <li class="mb-2">• Encouraging responsible travel practices among clients</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 mb-4">
-                    <div class="card h-100 border-0 shadow-sm">
-                        <div class="card-body">
-                            <h5><i class="fas fa-heart text-danger me-2"></i>Passionate About Sri Lanka</h5>
-                            <ul class="list-unstyled mt-3">
-                                <li class="mb-2">• We don't just sell tours; we share our love for our beautiful island</li>
-                                <li class="mb-2">• Our enthusiasm for Sri Lanka's landscapes, history, and people is
-                                    infectious</li>
-                                <li class="mb-2">• Creating lifelong memories, not just vacations</li>
+                                <li class="mb-3">
+                                    <strong>Stress-Free Arrivals:</strong><br>
+                                    <span class="text-muted small">Reliable 24/7 airport pickups, drops, and hand-picked
+                                        hotel reservations.</span>
+                                </li>
+                                <li class="mb-3">
+                                    <strong>Value-Added Service:</strong><br>
+                                    <span class="text-muted small">A commitment to providing authentic, affordable travel
+                                        that goes the extra mile.</span>
+                                </li>
+                                <li class="mb-3">
+                                    <strong>Efficient Exploration:</strong><br>
+                                    <span class="text-muted small">Benefit from a driver who knows the rhythm of the roads
+                                        for a safer, faster journey.</span>
+                                </li>
                             </ul>
                         </div>
                     </div>

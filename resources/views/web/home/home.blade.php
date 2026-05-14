@@ -34,13 +34,19 @@
 
                         modalBody.innerHTML = `
                             <div class="row">
-                                <div class="col-12">
-                                    <h6 class="text-primary mb-3">About ${info.name}</h6>
-
-                                    <h6 class="text-primary mb-3">Highlights</h6>
-                                    <div class="list-unstyled">
-                                        ${info.description}
-                                    </div>
+                                <div class="col-md-6 mb-3">
+                                    <img src="/${info.image}" class="img-fluid rounded shadow-sm" alt="${info.name}" style="width: 100%; height: 250px; object-fit: cover;">
+                                </div>
+                                <div class="col-md-6">
+                                    <h5 class="fw-bold text-primary mb-2">${info.name}</h5>
+                                    <p class="text-muted mb-4" style="text-align: justify;">${info.description}</p>
+                                    
+                                    ${info.spots ? `
+                                        <h6 class="fw-bold mb-3"><i class="fas fa-map-marked-alt text-primary me-2"></i>Spots & Activities</h6>
+                                        <div class="d-flex flex-wrap gap-2 mb-3">
+                                            ${info.spots.split(',').map(spot => `<span class="badge rounded-pill bg-primary bg-opacity-10 text-primary px-3 py-2 border border-primary border-opacity-25">${spot.trim()}</span>`).join('')}
+                                        </div>
+                                    ` : ''}
                                 </div>
                             </div>
                         `;

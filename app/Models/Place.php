@@ -14,6 +14,7 @@ class Place extends Model
         'name',
         'slug',
         'description',
+        'spots',
         'image',
         'status',
     ];

@@ -4,7 +4,7 @@
 <head>
     <!-- Google Tag Manager -->
     <script>
-        (function(w, d, s, l, i) {
+        (function (w, d, s, l, i) {
             w[l] = w[l] || [];
             w[l].push({
                 'gtm.start': new Date().getTime(),
@@ -82,37 +82,35 @@
     <!-- Load Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous">
-    </script>
+        </script>
 
     <!-- Load OwlCarousel -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
     <!-- Custom scripts -->
     <script>
-        window.addEventListener('scroll', function() {
+        window.addEventListener('scroll', function () {
             const navbar = document.getElementById('mainNavbar');
             if (window.scrollY > 50) {
-                navbar.classList.add('bg-white', 'shadow');
+                navbar.classList.add('bg-white', 'shadow', 'navbar-light');
+                navbar.classList.remove('navbar-dark');
             } else {
-                navbar.classList.remove('bg-white', 'shadow');
+                navbar.classList.remove('bg-white', 'shadow', 'navbar-light');
+                navbar.classList.add('navbar-dark');
             }
         });
 
         // Navbar toggle fix
-        document.addEventListener('DOMContentLoaded', function() {
-            const navbarCollapse = document.getElementById('navbarNav');
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenu = document.getElementById('mobileMenu');
 
-            if (navbarCollapse) {
+            if (mobileMenu && typeof bootstrap !== 'undefined' && bootstrap.Offcanvas) {
                 // Close menu when clicking on nav links (mobile)
-                const navLinks = navbarCollapse.querySelectorAll('.nav-link, .btn');
+                const navLinks = mobileMenu.querySelectorAll('.nav-link, .btn');
                 navLinks.forEach(link => {
-                    link.addEventListener('click', function() {
-                        if (window.innerWidth < 992) {
-                            const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
-                            if (bsCollapse) {
-                                bsCollapse.hide();
-                            }
-                        }
+                    link.addEventListener('click', function () {
+                        const bsOffcanvas = bootstrap.Offcanvas.getInstance(mobileMenu) || new bootstrap.Offcanvas(mobileMenu);
+                        bsOffcanvas.hide();
                     });
                 });
             }
