@@ -174,4 +174,38 @@ class PageController extends Controller
             return response()->json(['success' => false, 'message' => $e->getMessage()], 500);
         }
     }
+
+    public function importTestimonials()
+    {
+        try {
+            $csvFile = database_path('data/testimonials.csv');
+            if (!file_exists($csvFile)) {
+                return response()->json(['success' => false, 'message' => 'CSV file not found.'], 404);
+            }
+
+            // Truncate table
+            Testimonial::truncate();
+
+            $file = fopen($csvFile, 'r');
+            $header = fgetcsv($file); // Skip header
+
+            while (($row = fgetcsv($file)) !== FALSE) {
+                Testimonial::create([
+                    'name' => $row[0],
+                    'message' => $row[1],
+                    'country' => $row[2],
+                    'date' => $row[3],
+                    'rating' => $row[4],
+                    'is_approved' => $row[5],
+                    'status' => $row[6],
+                ]);
+            }
+
+            fclose($file);
+
+            return "✅ Testimonials imported successfully! <a href='/'>Go Home</a>";
+        } catch (\Exception $e) {
+            return response()->json(['success' => false, 'message' => $e->getMessage()], 500);
+        }
+    }
 }

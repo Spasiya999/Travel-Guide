@@ -203,7 +203,7 @@
 
 <script>
     $(document).ready(function() {
-        // Initialize Owl Carousel with proper mobile settings
+        // Initialize Owl Carousel
         $("#testimonialsCarousel").owlCarousel({
             items: 2,
             margin: 30,
@@ -213,29 +213,14 @@
             autoplay: true,
             autoplayTimeout: 5000,
             autoplayHoverPause: true,
-            navText: ['<span>‹</span>', '<span>›</span>'],
+            navText: ['<i class="fas fa-chevron-left"></i>', '<i class="fas fa-chevron-right"></i>'],
             smartSpeed: 800,
-            fluidSpeed: true,
-            dragEndSpeed: 350,
-            mouseDrag: true,
-            touchDrag: true,
-            pullDrag: true,
-            freeDrag: false,
-            stagePadding: 0,
             responsive: {
                 0: {
                     items: 1,
                     margin: 10,
-                    nav: true,
-                    dots: true,
-                    stagePadding: 20
-                },
-                480: {
-                    items: 1,
-                    margin: 15,
-                    nav: true,
-                    dots: true,
-                    stagePadding: 30
+                    nav: false,
+                    dots: true
                 },
                 768: {
                     items: 1,
@@ -249,36 +234,8 @@
                     nav: true,
                     dots: true
                 }
-            },
-            onInitialized: function(event) {
-                // Ensure proper initialization
-                setTimeout(function() {
-                    $('.testimonial-card').css({
-                        'opacity': '1',
-                        'transform': 'translateY(0)'
-                    });
-                }, 100);
-            },
-            onChanged: function(event) {
-                // Smooth transition animation
-                $('.testimonial-card').removeClass('animate-in');
-                setTimeout(function() {
-                    $('.owl-item.active .testimonial-card').addClass('animate-in');
-                }, 100);
             }
         });
-
-        // Touch-friendly hover effects for non-touch devices
-        if (!('ontouchstart' in window)) {
-            $('.testimonial-card').hover(
-                function() {
-                    $(this).css('transform', 'translateY(-5px)');
-                },
-                function() {
-                    $(this).css('transform', 'translateY(0)');
-                }
-            );
-        }
 
         // Handle window resize
         $(window).on('resize', function() {
