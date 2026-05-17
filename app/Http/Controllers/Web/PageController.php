@@ -208,4 +208,40 @@ class PageController extends Controller
             return response()->json(['success' => false, 'message' => $e->getMessage()], 500);
         }
     }
+
+    public function importPackages()
+    {
+        try {
+            $csvFile = database_path('data/packages.csv');
+            if (!file_exists($csvFile)) {
+                return response()->json(['success' => false, 'message' => 'CSV file not found.'], 404);
+            }
+
+            // Truncate table
+            Service::truncate();
+
+            $file = fopen($csvFile, 'r');
+            $header = fgetcsv($file); // Skip header
+
+            while (($row = fgetcsv($file)) !== FALSE) {
+                Service::updateOrCreate(
+                    ['name' => $row[0]], // condition
+                    [
+                        'short_description' => $row[1],
+                        'description' => $row[2],
+                        'image' => $row[3],
+                        'duration' => $row[4],
+                        'category_id' => $row[5],
+                        'status' => $row[6],
+                    ]
+                );
+            }
+
+            fclose($file);
+
+            return "✅ Packages imported successfully! <a href='/packages'>View Packages</a>";
+        } catch (\Exception $e) {
+            return response()->json(['success' => false, 'message' => $e->getMessage()], 500);
+        }
+    }
 }

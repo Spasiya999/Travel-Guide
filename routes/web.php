@@ -88,3 +88,4 @@ Route::get('/clear-all-cache', function () {
 
 Route::get('/import-destinations', [PageController::class, 'importDestinations'])->name('web.import.destinations');
 Route::get('/import-testimonials', [PageController::class, 'importTestimonials'])->name('web.import.testimonials');
+Route::get('/import-packages', [PageController::class, 'importPackages'])->name('web.import.packages');

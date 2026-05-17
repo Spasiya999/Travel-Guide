@@ -1,0 +1,166 @@
+name,short_description,description,image,duration,category_id,status
+"Tour Plan 03: Heritage & Nature Grandeur","A 10 Days / 9 Nights journey exploring Sigiriya, Polonnaruwa, Kandy, Nuwara Eliya, Ella, and Galle.","<div class=""itinerary"">
+    <h4>DAY 01 - 03: SIGIRIYA & POLONNARUWA</h4>
+    <p>Upon arrival, transfer to Sigiriya for a 2-night stay. Explore the heart of the Cultural Triangle.</p>
+    <ul>
+        <li><strong>Sigiriya Lion Rock Fortress:</strong> Climb the 5th-century UNESCO citadel.</li>
+        <li><strong>Hiriwadunna Village Tour:</strong> Experience authentic Sri Lankan rural life and a traditional lunch.</li>
+        <li><strong>Wildlife Safari:</strong> Visit Minneriya, Kaudulla, or Eco Park to witness the 'Gathering' of wild elephants.</li>
+        <li><strong>Dambulla Cave Temple:</strong> Marvel at the ancient murals and golden statues.</li>
+        <li><strong>Polonnaruwa:</strong> One day visit to the ancient heritage site.</li>
+    </ul>
+    <p><strong>Stay:</strong> Sigiriya (3 Nights)</p>
+
+    <h4>DAY 04 - 05: KANDY</h4>
+    <p>Proceed to the hill capital of Kandy.</p>
+    <ul>
+        <li><strong>Herbal & Spice Garden:</strong> Learn about Sri Lanka's world-renowned spices.</li>
+        <li><strong>Temple of the Sacred Tooth Relic:</strong> Visit the most sacred Buddhist site in the country.</li>
+        <li><strong>Kandy View Point & Gem Museum:</strong> Panoramic city views and a glimpse into the jewelry industry.</li>
+        <li><strong>Royal Botanical Gardens:</strong> A stroll through the lush gardens of Peradeniya.</li>
+        <li><strong>Cultural Dance Show:</strong> An evening of traditional Kandyan drumming and fire walking.</li>
+    </ul>
+    <p><strong>Stay:</strong> Kandy (2 Nights)</p>
+
+    <h4>DAY 06 – 08: NUWARA ELIYA & ELLA</h4>
+    <ul>
+        <li><strong>Gregory Lake:</strong> Enjoy a serene lakeside walk and water activities.</li>
+        <li><strong>Victoria Park:</strong> Explore the beautiful gardens of Little England.</li>
+        <li><strong>Moon Plains:</strong> A 360-degree view of the surrounding mountain ranges.</li>
+        <li><strong>Ramboda Waterfall &amp; Tea Factory:</strong> Scenic tea tasting and waterfall views en route.</li>
+        <li><strong>Little Adam's Peak & Nine Arch Bridge:</strong> Iconic hikes and architectural wonders.</li>
+    </ul>
+    <p><strong>Stay:</strong> Nuwara Eliya (1 Night) & Ella (2 Nights)</p>
+
+    <h4>DAY 09 - 10: GALLE & DEPARTURE</h4>
+    <p>Final night in Galle. Activities: Madu River Boat Safari (mangroves) and a visit to a Turtle Hatchery.</p>
+    <p><strong>Stay:</strong> Galle (1 Night)</p>
+</div>","packages/default.jpg","10 Days / 9 Nights",1,1
+"Tour Plan 02: Scenic Highlands & Coast","A 7 Days / 6 Nights journey exploring Sigiriya, Kandy, Ella, Mirissa, and Galle.","<div class=""itinerary"">
+    <h4>DAY 01 - 02: SIGIRIYA</h4>
+    <p>Upon arrival, transfer to Sigiriya for a 2-night stay. Explore the heart of the Cultural Triangle.</p>
+    <ul>
+        <li><strong>Sigiriya Lion Rock Fortress:</strong> Climb the 5th-century UNESCO citadel.</li>
+        <li><strong>Hiriwadunna Village Tour:</strong> Experience authentic Sri Lankan rural life and a traditional lunch.</li>
+        <li><strong>Wildlife Safari:</strong> Visit Minneriya, Kaudulla, or Eco Park to witness the 'Gathering' of wild elephants.</li>
+        <li><strong>Dambulla Cave Temple:</strong> Marvel at the ancient murals and golden statues.</li>
+    </ul>
+    <p><strong>Stay:</strong> Sigiriya (2 Nights)</p>
+
+    <h4>DAY 03 - 04: KANDY</h4>
+    <ul>
+        <li><strong>Herbal & Spice Garden:</strong> Learn about Sri Lanka's world-renowned spices.</li>
+        <li><strong>Temple of the Sacred Tooth Relic:</strong> Visit the most sacred Buddhist site in the country.</li>
+        <li><strong>Kandy View Point & Gem Museum:</strong> Panoramic city views and a glimpse into the jewelry industry.</li>
+        <li><strong>Royal Botanical Gardens:</strong> A stroll through the lush gardens of Peradeniya.</li>
+        <li><strong>Cultural Dance Show:</strong> An evening of traditional Kandyan drumming and fire walking.</li>
+    </ul>
+    <p><strong>Stay:</strong> Kandy (2 Nights)</p>
+
+    <h4>DAY 05: ELLA</h4>
+    <p>Travel to the misty mountains of Ella. En route and on-site highlights:</p>
+    <ul>
+        <li><strong>Ramboda Waterfall &amp; Tea Factory:</strong> Scenic stops for photos and fresh Ceylon tea.</li>
+        <li><strong>Gregory Lake:</strong> A serene walk in Nuwara Eliya.</li>
+        <li><strong>Little Adam's Peak & Nine Arch Bridge:</strong> Iconic hikes and architectural wonders.</li>
+        <li><strong>Ravana Waterfall:</strong> Legend-steeped falls by the roadside.</li>
+    </ul>
+    <p><strong>Stay:</strong> Ella (1 Night)</p>
+
+    <h4>DAY 06: MIRISSA</h4>
+    <p>Head to the southern coast for beach vibes.</p>
+    <ul>
+        <li><strong>Whale Watching:</strong> An early morning boat excursion.</li>
+        <li><strong>Coconut Tree Hill:</strong> The most Instagrammable viewpoint in Mirissa.</li>
+    </ul>
+    <p><strong>Stay:</strong> Mirissa (1 Night)</p>
+
+    <h4>DAY 07: DEPARTURE</h4>
+    <p>Transfer to the airport. En route, visit the historic Galle Dutch Fort, a UNESCO heritage site.</p>
+</div>","packages/default.jpg","7 Days / 6 Nights",1,1
+"Tour Plan 04: The All-Island Loop","A comprehensive journey covering culture, tea country, wildlife, and beaches.","<div class=""itinerary"">
+    <h4>DAY 01 - 02: SIGIRIYA</h4>
+    <p>Upon arrival, transfer to Sigiriya for a 2-night stay. Explore the heart of the Cultural Triangle.</p>
+    <ul>
+        <li><strong>Sigiriya Lion Rock Fortress:</strong> Climb the 5th-century UNESCO citadel.</li>
+        <li><strong>Hiriwadunna Village Tour:</strong> Experience authentic Sri Lankan rural life and a traditional lunch.</li>
+        <li><strong>Wildlife Safari:</strong> Visit Minneriya, Kaudulla, or Eco Park to witness the 'Gathering' of wild elephants.</li>
+        <li><strong>Dambulla Cave Temple:</strong> Marvel at the ancient murals and golden statues.</li>
+    </ul>
+    <p><strong>Stay:</strong> Sigiriya (2 Nights)</p>
+
+    <h4>DAY 03 - 04: KANDY</h4>
+    <p>Proceed to the hill capital of Kandy.</p>
+    <ul>
+        <li><strong>Herbal & Spice Garden:</strong> Learn about Sri Lanka's world-renowned spices.</li>
+        <li><strong>Temple of the Sacred Tooth Relic:</strong> Visit the most sacred Buddhist site in the country.</li>
+        <li><strong>Kandy View Point & Gem Museum:</strong> Panoramic city views and a glimpse into the jewelry industry.</li>
+        <li><strong>Royal Botanical Gardens:</strong> A stroll through the lush gardens of Peradeniya.</li>
+        <li><strong>Cultural Dance Show:</strong> An evening of traditional Kandyan drumming and fire walking.</li>
+    </ul>
+    <p><strong>Stay:</strong> Kandy (2 Nights)</p>
+
+    <h4>DAY 05 - 07: NUWARA ELIYA & ELLA</h4>
+    <ul>
+        <li><strong>Gregory Lake:</strong> Enjoy a serene lakeside walk and water activities.</li>
+        <li><strong>Victoria Park:</strong> Explore the beautiful gardens of 'Little England'.</li>
+        <li><strong>Moon Plains:</strong> A 360-degree view of the surrounding mountain ranges.</li>
+        <li><strong>Ramboda Waterfall &amp; Tea Factory:</strong> Scenic tea tasting and waterfall views en route.</li>
+        <li><strong>Little Adam's Peak & Nine Arch Bridge:</strong> Iconic hikes and architectural wonders.</li>
+    </ul>
+    <p><strong>Stay:</strong> Nuwara Eliya (1 Night) & Ella (1 Night)</p>
+
+    <h4>DAY 08: YALA</h4>
+    <ul>
+        <li><strong>Afternoon Safari</strong></li>
+    </ul>
+    <p><strong>Stay:</strong> Yala (1 Night)</p>
+
+    <h4>DAY 09: MIRISSA</h4>
+    <ul>
+        <li><strong>Whale Watching</strong></li>
+    </ul>
+    <p><strong>Stay:</strong> Mirissa (1 Night)</p>
+
+    <h4>DAY 10: GALLE</h4>
+    <ul>
+        <li><strong>Dutch Fort</strong></li>
+    </ul>
+    <p><strong>Stay:</strong> Galle (1 Night)</p>
+
+    <h4>DAY 11: NEGOMBO</h4>
+    <ul>
+        <li><strong>Relax by the beach before departure</strong></li>
+    </ul>
+    <p><strong>Stay:</strong> Negombo (1 Night)</p>
+
+    <h4>DAY 12: DEPARTURE</h4>
+    <p>Transfer to the airport.</p>
+</div>","packages/default.jpg","12 Days / 11 Nights",1,1
+"Tour Plan 05: Ultimate Sri Lankan Expedition","A 15 Days / 14 Nights ultimate expedition through Sri Lanka's historical kingdoms, beaches, wildlife, and tea country.","<div class=""itinerary"">
+    <h4>DAY 01 - 02: ANURADHAPURA</h4>
+    <p>Explore the first kingdom of Sri Lanka. Includes Wilpattu National Park Safari, the Ancient City, and Mihintale Temple.</p>
+
+    <h4>DAY 03 - 04: TRINCOMALEE</h4>
+    <p>Relax on the white sands of Nilaveli Beach, snorkel at Pigeon Island, and visit the Koneswaram Temple.</p>
+
+    <h4>DAY 05 - 06: SIGIRIYA & KANDY</h4>
+    <ul>
+        <li><strong>Sigiriya Lion Rock:</strong> Climb the 5th-century ancient rock fortress and palace ruin.</li>
+        <li><strong>Hiriwadunna Village Tour:</strong> Experience authentic rural life with a traditional lunch.</li>
+        <li><strong>Wildlife Safari:</strong> Minneriya, Kaudulla, or Eco Park safari to see wild elephant gatherings.</li>
+        <li><strong>Dambulla Cave Temple:</strong> Marvel at the UNESCO-listed ancient murals and golden statues.</li>
+        <li><strong>Herbal &amp; Spice Garden:</strong> Explore the origins of Ceylon &amp; world-famous spices.</li>
+        <li><strong>Temple of the Sacred Tooth Relic:</strong> Visit the most revered Buddhist temple in Sri Lanka.</li>
+        <li><strong>Kandy View Point:</strong> Panoramic views of the hill capital and the Kandy Lake.</li>
+        <li><strong>Gem Museum:</strong> A glimpse into the island &amp; rich jewelry and gemstone history.</li>
+        <li><strong>Royal Botanical Garden:</strong> Stroll through the lush, historical gardens of Peradeniya.</li>
+        <li><strong>Cultural Dance Show:</strong> An evening of traditional drumming, dance, and fire walking.</li>
+    </ul>
+
+    <h4>DAY 09 - 10: NUWARA ELIYA</h4>
+    <p>A 2-night stay including a morning trek at Horton Plains National Park (World's End).</p>
+
+    <h4>DAY 11 - 15: ELLA, YALA, GALLE</h4>
+    <p>Complete the loop with 2 nights in Ella for hiking, 1 night in Yala for the leopard safari, and a final night in Galle.</p>
+</div>","packages/default.jpg","15 Days / 14 Nights",1,1

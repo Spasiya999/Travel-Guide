@@ -78,14 +78,18 @@
         @foreach ($services as $service)
             <div class="col-lg-3 col-6 mb-3 h-auto">
                 <div class="card d-flex flex-column h-100 shadow-card border-0 rounded-4 px-2 pt-2">
-                    <img src="{{ $service->image ? asset($service->image) : asset('frontend/img/packges (3).png') }}"
-                        class="card-img-top rounded-4" alt="{{ $service->title ?? 'Service' }}">
+                    @php
+                        $hasImage = $service->image && file_exists(public_path($service->image));
+                        $imageSrc = $hasImage ? asset($service->image) : asset('frontend/img/packges (3).png');
+                    @endphp
+                    <img src="{{ $imageSrc }}"
+                        class="card-img-top rounded-4" alt="{{ $service->name ?? 'Service' }}" style="height: 180px; object-fit: cover;">
                     <div class="card-body d-flex flex-column px-2 py-3 justify-content-between">
                         <div>
-                            <h5 class="card-title fw-bold font-14">{{ $service->title ?? 'Service Title' }}</h5>
+                            <h5 class="card-title fw-bold font-14">{{ $service->name ?? 'Service Title' }}</h5>
                             <p class="mb-1 font-12 texr-primary">{{ $service->duration ?? '' }}</p>
                             <div class="card-text mb-3" style="font-size: 13px;">
-                                {{ \Illuminate\Support\Str::limit(strip_tags($service->description), 100) }}
+                                {{ \Illuminate\Support\Str::limit($service->short_description ?? strip_tags($service->description), 100) }}
                             </div>
                         </div>
                         <a href="{{ route('web.packages', ['category' => $service->category_id]) }}"

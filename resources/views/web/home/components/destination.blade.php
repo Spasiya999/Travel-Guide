@@ -101,11 +101,10 @@
     </h5>
     <h2 class="text-center main-title mb-5" style="font-size: 48px;">Top Destinations in Sri Lanka</h2>
 
-    <div class="row justify-content-center g-4">
-
+    <div class="owl-carousel owl-theme destination-carousel">
         @foreach ($places as $place)
-            <div class="col-lg-4 col-md-6">
-                <div class="destination-card" 
+            <div class="item w-100">
+                <div class="destination-card w-100" 
                      style="background-image: url('{{ asset($place->image) }}');" 
                      onclick="showDestination({{ $place->id }})">
                     <div class="destination-overlay">
@@ -136,3 +135,21 @@
     </div>
 </div>
 
+<script>
+    $(document).ready(function(){
+        $(".destination-carousel").owlCarousel({
+            loop: true,
+            margin: 20,
+            nav: false,
+            dots: true,
+            autoplay: true,
+            autoplayTimeout: 3000,
+            autoplayHoverPause: true,
+            responsive: {
+                0: { items: 1 },
+                600: { items: 2 },
+                1000: { items: 3 }
+            }
+        });
+    });
+</script>

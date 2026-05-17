@@ -174,34 +174,62 @@
                             <div class="duration-badge">
                                 <i class="fas fa-clock me-1"></i>{{ $package->duration }}
                             </div>
-                            <img src="{{ $package->image ? asset($package->image) : asset('frontend/img/packges (1).png') }}"
-                                class="package-img" alt="{{ $package->name }}">
-                            <div class="card-body">
+                            @php
+                                $hasImage = $package->image && file_exists(public_path($package->image));
+                                $imageSrc = $hasImage ? asset($package->image) : asset('frontend/img/packges (1).png');
+                            @endphp
+                            <img src="{{ $imageSrc }}" class="package-img" alt="{{ $package->name }}">
+                            <div class="card-body d-flex flex-column">
                                 <h5 class="card-title fw-bold">{{ $package->name }}</h5>
-                                <p class="card-text text-muted">{{ $package->short_description }}</p>
-                                <div class="package-includes mb-3">
-                                    {!! $package->description !!}
-                                    {{-- <h6><i class="fas fa-check-circle text-success me-2"></i>Package Includes:</h6>
+                                <p class="card-text text-muted">{{ Str::limit($package->short_description, 100) }}</p>
+                                <div class="package-includes mb-3 flex-grow-1">
+                                    <h6><i class="fas fa-check-circle text-success me-2"></i>Package Includes:</h6>
                                     <ul class="list-unstyled small">
                                         <li><i class="fas fa-car me-2 text-primary"></i>Private air-conditioned vehicle</li>
                                         <li><i class="fas fa-user-tie me-2 text-primary"></i>Personal guide</li>
                                         <li><i class="fas fa-bed me-2 text-primary"></i>Comfortable accommodations</li>
                                         <li><i class="fas fa-utensils me-2 text-primary"></i>Traditional meals</li>
-                                        <li><i class="fas fa-ticket-alt me-2 text-primary"></i>All entrance fees included
-                                        </li>
-                                    </ul> --}}
+                                    </ul>
                                 </div>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <div class="rating">
-                                        @for ($i = 0; $i < 5; $i++)
-                                            <i class="fas fa-star text-warning"></i>
-                                        @endfor
-                                        <small class="text-muted ms-1">
-                                            ({{ $package->testimonials->where('status', 1)->where('is_approved', 1)->count() }}
-                                            reviews)
-                                        </small>
+                                <div class="mt-auto">
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <div class="rating">
+                                            @for ($i = 0; $i < 5; $i++)
+                                                <i class="fas fa-star text-warning"></i>
+                                            @endfor
+                                            <small class="text-muted ms-1">
+                                                ({{ $package->testimonials->where('status', 1)->where('is_approved', 1)->count() }}
+                                                reviews)
+                                            </small>
+                                        </div>
                                     </div>
-                                    <a href="#" class="btn btn-primary">Book Now</a>
+                                    <div class="d-flex gap-2">
+                                        <button type="button" class="btn btn-outline-primary flex-grow-1" data-bs-toggle="modal" data-bs-target="#itineraryModal{{ $package->id }}">
+                                            View Itinerary
+                                        </button>
+                                        <a href="#" class="btn btn-primary flex-grow-1">Book Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal for Itinerary -->
+                    <div class="modal fade" id="itineraryModal{{ $package->id }}" tabindex="-1" aria-labelledby="itineraryModalLabel{{ $package->id }}" aria-hidden="true">
+                        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                            <div class="modal-content">
+                                <div class="modal-header" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                                    <h5 class="modal-title" id="itineraryModalLabel{{ $package->id }}">{{ $package->name }} - Itinerary</h5>
+                                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body p-4">
+                                    <div class="itinerary-content">
+                                        {!! $package->description !!}
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <a href="{{ route('web.contact') }}?service={{ $package->id }}" class="btn btn-primary">Book This Package</a>
                                 </div>
                             </div>
                         </div>
